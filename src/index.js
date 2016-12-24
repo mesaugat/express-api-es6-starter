@@ -1,12 +1,23 @@
+import '../env';
 import express from 'express';
 
 const app = express();
 
-app.set('port', 8848);
-app.set('host', '127.0.0.1');
+// Test environment will run in port 9949
+const APP_PORT = (process.env.NODE_ENV !== 'test' ? process.env.APP_PORT : '9949') || '3000';
+const APP_HOST = process.env.APP_HOST || '0.0.0.0';
+
+app.set('port', APP_PORT);
+app.set('host', APP_HOST);
+
+app.locals.title = process.env.APP_NAME;
+app.locals.version = process.env.APP_VERSION;
 
 app.get('/', (req, res) => {
-  res.json({'title': 'express-api-es6-starter'});
+  res.json({
+    app: req.app.locals.title,
+    apiVersion: req.app.locals.version
+  });
 });
 
 app.listen(app.get('port'), app.get('host'), () => {

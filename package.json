@@ -19,6 +19,7 @@
   "author": "Saugat Acharya <mesaugat@gmail.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "express": "^4.14.0"
   },
   "devDependencies": {
