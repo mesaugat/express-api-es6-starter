@@ -1,5 +1,7 @@
 import '../env';
+import './db';
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
@@ -13,12 +15,8 @@ app.set('host', APP_HOST);
 app.locals.title = process.env.APP_NAME;
 app.locals.version = process.env.APP_VERSION;
 
-app.get('/', (req, res) => {
-  res.json({
-    app: req.app.locals.title,
-    apiVersion: req.app.locals.version
-  });
-});
+// API Routes
+app.use('/api', routes);
 
 app.listen(app.get('port'), app.get('host'), () => {
   console.log('Server started at http://localhost:' + app.get('port'));
