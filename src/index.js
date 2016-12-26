@@ -1,7 +1,12 @@
 import '../env';
 import './db';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
 import express from 'express';
 import routes from './routes';
+import bodyParser from 'body-parser';
+import compression from 'compression';
 
 const app = express();
 
@@ -14,6 +19,12 @@ app.set('host', APP_HOST);
 
 app.locals.title = process.env.APP_NAME;
 app.locals.version = process.env.APP_VERSION;
+
+app.use(cors());
+app.use(helmet());
+app.use(compression());   // This is an expensive operation, if you are using revery proxy server of some kind gzip from there.
+app.use(morgan('dev'));
+app.use(bodyParser.json());
 
 // API Routes
 app.use('/api', routes);
