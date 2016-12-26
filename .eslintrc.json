@@ -1,0 +1,22 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-var": ["error"],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "newline-before-return": ["error"],
+    "linebreak-style": ["error", "unix"],
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "camelcase": ["error", {"properties": "never"}]
+  }
+}
