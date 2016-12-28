@@ -30,7 +30,8 @@
     "knex": "^0.12.6",
     "morgan": "^1.7.0",
     "pg": "^6.1.2",
-    "winston": "^2.3.0"
+    "winston": "^2.3.0",
+    "winston-daily-rotate-file": "^1.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
