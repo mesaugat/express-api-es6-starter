@@ -7,7 +7,7 @@
     "prestart": "npm run build",
     "lint": "eslint src; exit 0",
     "build": "rimraf dist && babel src -D --out-dir dist",
-    "start:dev": "nodemon --exec 'babel-node src --source-maps'"
+    "start:dev": "nodemon --exec babel-node src --source-maps"
   },
   "keywords": [
     "javascript",
