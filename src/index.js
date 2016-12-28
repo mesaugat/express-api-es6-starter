@@ -1,10 +1,11 @@
-import '../env';
+import './env';
 import './db';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
 import routes from './routes';
+import logger from './utils/logger';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 
@@ -30,7 +31,7 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 app.listen(app.get('port'), app.get('host'), () => {
-  console.log('Server started at http://localhost:' + app.get('port'));
+  logger.log('info', 'Server started at http://localhost:' + app.get('port'));
 });
 
 export default app;
