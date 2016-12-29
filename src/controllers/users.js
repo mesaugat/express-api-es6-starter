@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import User from '../models/user';
+import * as userService from '../services/userService';
 
 let router = Router();
 
@@ -7,12 +7,9 @@ let router = Router();
  * Route: /api/users
  */
 router.get('/', (req, res, next) => {
-  User.fetchAll().then(users => {
-    res.json(users.toJSON());
-  })
-  .catch(err => {
-    next(err);
-  });
+  userService.getAllUsers()
+    .then(data => res.json({data}))
+    .catch(err => next(err));
 });
 
 export default router;
