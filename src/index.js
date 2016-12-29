@@ -8,6 +8,7 @@ import routes from './routes';
 import logger from './utils/logger';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+import * as errorHandler from './middlewares/errorHandler';
 
 const app = express();
 
@@ -29,6 +30,10 @@ app.use(bodyParser.json());
 
 // API Routes
 app.use('/api', routes);
+
+// Error Middlewares
+app.use(errorHandler.genericErrorHandler);
+app.use(errorHandler.notFoundError);
 
 app.listen(app.get('port'), app.get('host'), () => {
   logger.log('info', 'Server started at http://localhost:' + app.get('port'));

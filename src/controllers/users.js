@@ -9,6 +9,9 @@ let router = Router();
 router.get('/', (req, res, next) => {
   User.fetchAll().then(users => {
     res.json(users.toJSON());
+  })
+  .catch(err => {
+    next(err);
   });
 });
 

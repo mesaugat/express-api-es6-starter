@@ -27,6 +27,7 @@
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "helmet": "^3.2.0",
+    "http-status-codes": "^1.0.6",
     "knex": "^0.12.6",
     "morgan": "^1.7.0",
     "pg": "^6.1.2",
