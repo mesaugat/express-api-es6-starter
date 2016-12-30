@@ -2,10 +2,19 @@ import User from '../models/user';
 
 /**
  * Get all users.
+ *
  * @return {Promise}
  */
 export async function getAllUsers() {
-  let users = await User.fetchAll();
+  return await User.fetchAll();
+}
 
-  return users;
+/**
+ * Create new user.
+ *
+ * @param  {Object}  user
+ * @return {Promise}
+ */
+export async function createUser(user) {
+  return await new User({name: user.name}).save();
 }

@@ -1,5 +1,6 @@
 import logger from '../utils/logger';
 import HttpStatus from 'http-status-codes';
+import buildError from '../utils/buildError';
 
 /**
  * Error response middleware for 404 not found. This middleware function should be at the very bottom of the stack.
@@ -27,13 +28,6 @@ export function notFoundError(req, res, next) { // eslint-disable-line no-unused
 export function genericErrorHandler(err, req, res, next) {  // eslint-disable-line no-unused-vars
   if (err.stack) logger.error(err.stack);
 
-  let code = err.code || HttpStatus.INTERNAL_SERVER_ERROR;
-  let message = err.message || HttpStatus.getStatusText(code);
-
-  res.status(code).json({
-    error: {
-      code: code,
-      message: message
-    }
-  });
+  let error = buildError(err);
+  res.status(error.code).json({error});
 }

@@ -1,13 +1,11 @@
 {
   "env": {
+    "es6": true,
     "node": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 2017,
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "sourceType": "module"
   },
   "rules": {
@@ -16,6 +14,7 @@
     "quotes": ["error", "single"],
     "newline-before-return": ["error"],
     "linebreak-style": ["error", "unix"],
+    "spaced-comment": ["error", "always"],
     "indent": ["error", 2, {"SwitchCase": 1}],
     "camelcase": ["error", {"properties": "never"}]
   }
