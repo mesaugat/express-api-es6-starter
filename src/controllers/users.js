@@ -9,7 +9,7 @@ let router = Router();
  */
 router.get('/', (req, res, next) => {
   userService.getAllUsers()
-    .then(data => res.status(222).json({data}))
+    .then(data => res.json({data}))
     .catch(err => next(err));
 });
 
