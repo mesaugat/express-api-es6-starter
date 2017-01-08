@@ -12,7 +12,7 @@ export async function getAllUsers() {
 /**
  * Create new user.
  *
- * @param  {Object}  user
+ * @param  {object}  user
  * @return {Promise}
  */
 export async function createUser(user) {

@@ -24,7 +24,7 @@ app.locals.version = process.env.APP_VERSION;
 
 app.use(cors());
 app.use(helmet());
-app.use(compression());   // This is an expensive operation, if you are using revery proxy server of some kind gzip from there.
+app.use(compression());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 

@@ -5,8 +5,9 @@ import buildError from '../utils/buildError';
 /**
  * Error response middleware for 404 not found. This middleware function should be at the very bottom of the stack.
  *
- * @param {Object} req
- * @param {Object} res
+ * @param  {object}   req
+ * @param  {object}   res
+ * @param  {function} next
  */
 export function notFoundError(req, res, next) { // eslint-disable-line no-unused-vars
   res.status(HttpStatus.NOT_FOUND).json({
@@ -20,10 +21,10 @@ export function notFoundError(req, res, next) { // eslint-disable-line no-unused
 /**
  * Generic error response middleware for validation and internal server errors.
  *
- * @param {Object} err
- * @param {Object} req
- * @param {Object} res
- * @param {Object} next
+ * @param  {object}   err
+ * @param  {object}   req
+ * @param  {object}   res
+ * @param  {function} next
  */
 export function genericErrorHandler(err, req, res, next) {  // eslint-disable-line no-unused-vars
   if (err.stack) logger.error(err.stack);

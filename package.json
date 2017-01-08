@@ -6,8 +6,11 @@
     "start": "node dist",
     "prestart": "npm run build",
     "lint": "eslint src; exit 0",
+    "seed": "knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
-    "start:dev": "nodemon --exec babel-node src --source-maps"
+    "start:dev": "nodemon --exec babel-node src --source-maps",
+    "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
+    "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js"
   },
   "keywords": [
     "javascript",
