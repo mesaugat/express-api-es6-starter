@@ -1,6 +1,5 @@
 import {Router} from 'express';
 import usersController from './controllers/users';
-import createUserValidator from './validators/createUserValidator';
 
 /**
  * Contains all API routes for the application.
@@ -14,6 +13,6 @@ router.get('/', (req, res) => {
   });
 });
 
-router.use('/users', createUserValidator, usersController);
+router.use('/users', usersController);
 
 export default router;

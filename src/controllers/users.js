@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import HttpStatus from 'http-status-codes';
 import * as userService from '../services/userService';
+import createUserValidator from '../validators/createUserValidator';
 
 let router = Router();
 
@@ -16,7 +17,7 @@ router.get('/', (req, res, next) => {
 /**
  * POST /api/users
  */
-router.post('/', (req, res, next) => {
+router.post('/', createUserValidator, (req, res, next) => {
   userService.createUser(req.body)
     .then(data => res.status(HttpStatus.CREATED).json({data}))
     .catch(err => next(err));

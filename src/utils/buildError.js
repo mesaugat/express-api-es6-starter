@@ -3,8 +3,8 @@ import HttpStatus from 'http-status-codes';
 /**
  * Build error response for validation errors.
  *
- * @param  {Error} err
- * @return {Array|Object}
+ * @param  {error} err
+ * @return {array|object}
  */
 function buildError(err) {
   if (err.isJoi) {

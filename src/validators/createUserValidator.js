@@ -8,17 +8,13 @@ const SCHEMA = {
 /**
  * Validator for validating create user request.
  *
- * @param  {Object}   req
- * @param  {Object}   res
- * @param  {Function} next
+ * @param  {object}   req
+ * @param  {object}   res
+ * @param  {function} next
+ * @return {Promise}
  */
 function createUserValidator(req, res, next) {
-  // Skip validation for GET requests
-  if (req.method === 'GET') {
-    return next();
-  }
-
-  validate(req.body, SCHEMA)
+  return validate(req.body, SCHEMA)
     .then(() => next())
     .catch(err => next(err));
 }
