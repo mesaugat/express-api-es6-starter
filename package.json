@@ -10,7 +10,8 @@
     "build": "rimraf dist && babel src -D --out-dir dist",
     "start:dev": "nodemon --exec babel-node src --source-maps",
     "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
-    "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js"
+    "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js",
+    "test": "NODE_ENV=test mocha --recursive --require babel-register test"
   },
   "keywords": [
     "javascript",
@@ -44,9 +45,13 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-es2016": "^6.16.0",
     "babel-preset-es2017": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
     "eslint": "^3.12.2",
+    "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "supertest": "^2.0.1"
   },
   "engines": {
     "node": ">= 6.5.0",
