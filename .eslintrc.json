@@ -1,7 +1,8 @@
 {
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "mocha": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -11,7 +12,9 @@
   "rules": {
     "no-var": ["error"],
     "semi": ["error", "always"],
+    "space-infix-ops": ["error"],
     "quotes": ["error", "single"],
+    "eol-last": ["error", "always"],
     "newline-before-return": ["error"],
     "linebreak-style": ["error", "unix"],
     "spaced-comment": ["error", "always"],
