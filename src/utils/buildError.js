@@ -7,6 +7,7 @@ import HttpStatus from 'http-status-codes';
  * @return {array|object}
  */
 function buildError(err) {
+  // Validation errors
   if (err.isJoi) {
     return {
       code: HttpStatus.BAD_REQUEST,
@@ -20,6 +21,13 @@ function buildError(err) {
     };
   }
 
+  // HTTP errors
+  if (err.isBoom) {
+    return {
+      code: err.output.statusCode,
+      message: err.output.payload.message || err.output.payload.error
+    };
+  }
 
   // Return INTERNAL_SERVER_ERROR for all other cases
   return {

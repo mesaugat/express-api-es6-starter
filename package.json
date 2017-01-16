@@ -26,6 +26,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "bookshelf": "^0.10.2",
+    "boom": "^4.2.0",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "dotenv": "^2.0.0",
