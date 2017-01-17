@@ -7,11 +7,12 @@ import bookshelf from '../../src/db';
  * Tests for '/api/users'
  */
 describe('Users Controller Test', () => {
-  before((done) => {
+
+  before(done => {
     bookshelf.knex('users').truncate().then(() => done());
   });
 
-  it('should return list of users', (done) => {
+  it('should return list of users', done => {
     request(app)
       .get('/api/users')
       .end((err, res) => {
@@ -23,7 +24,7 @@ describe('Users Controller Test', () => {
       });
   });
 
-  it('should not create a new user if name is not provided', (done) => {
+  it('should not create a new user if name is not provided', done => {
     let user = {
       noname: 'Jane Doe'
     };
@@ -43,7 +44,7 @@ describe('Users Controller Test', () => {
       });
   });
 
-  it('should create a new user with valid data', (done) => {
+  it('should create a new user with valid data', done => {
     let user = {
       name: 'Jane Doe'
     };
@@ -63,7 +64,7 @@ describe('Users Controller Test', () => {
       });
   });
 
-  it('should update a user if name is provided', (done) => {
+  it('should update a user if name is provided', done => {
     let user = {
       name: 'John Doe'
     };
@@ -83,7 +84,7 @@ describe('Users Controller Test', () => {
       });
   });
 
-  it('should not update a user if name is not provided', (done) => {
+  it('should not update a user if name is not provided', done => {
     let user = {
       noname: 'John Doe'
     };
@@ -103,7 +104,7 @@ describe('Users Controller Test', () => {
       });
   });
 
-  it('should delete a user if valid id is provided', (done) => {
+  it('should delete a user if valid id is provided', done => {
     request(app)
       .delete('/api/users/1')
       .end((err, res) => {
@@ -113,7 +114,7 @@ describe('Users Controller Test', () => {
       });
   });
 
-  it('should respond with not found error if random user id is provided for deletion', (done) => {
+  it('should respond with not found error if random user id is provided for deletion', done => {
     request(app)
       .delete('/api/users/1991')
       .end((err, res) => {
