@@ -1,6 +1,7 @@
 import './env';
 import './db';
 import cors from 'cors';
+import path from 'path';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
@@ -26,6 +27,7 @@ app.use(helmet());
 app.use(compression());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '/../public')));
 
 // API Routes
 app.use('/api', routes);
@@ -35,7 +37,7 @@ app.use(errorHandler.genericErrorHandler);
 app.use(errorHandler.notFoundError);
 
 app.listen(app.get('port'), app.get('host'), () => {
-  logger.log('info', 'Server started at http://localhost:' + app.get('port'));
+  logger.log('info', `Server started at http://${app.get('host')}:${app.get('port')}`);
 });
 
 export default app;

@@ -8,11 +8,11 @@ import HttpStatus from 'http-status-codes';
  */
 function buildError(err) {
   // Validation errors
-  if (err.isJoi) {
+  if (err.isJoi || err instanceof SyntaxError) {
     return {
       code: HttpStatus.BAD_REQUEST,
       message: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
-      details: err.details.map(err => {
+      details: err.details && err.details.map(err => {
         return {
           message: err.message,
           param: err.path
