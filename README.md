@@ -1,6 +1,6 @@
 # Express API ES6 Starter
 
-Starter application for building APIs with [Express.js](http://expressjs.com/).
+Starter application for building APIs with [Express.js](http://expressjs.com/)
 
 Comes with:
 
@@ -31,7 +31,7 @@ Make a copy of `.env.example` as `.env` and update your application details and 
     $ npm run migrate:latest
     $ npm run seed
 
-Finally, start the application:
+Finally, start the application.
 
     $ npm run start:dev (For development)
     $ npm start (For production)
@@ -47,10 +47,12 @@ To run the tests you need to create a separate test database. Don't forget to up
 
 ## Using MySQL instead of PostgreSQL
 
-Install [mysql](https://www.npmjs.com/package/mysql) driver and update this line `DB_CLIENT='pg'` in your .env file to `DB_CLIENT='mysql'`. You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
+Install the [mysql](https://www.npmjs.com/package/mysql) driver first and update this line: `DB_CLIENT='pg'` in your .env file to: `DB_CLIENT='mysql'`. You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
 
     $ npm install mysql --save
     $ npm uninstall pg --save
+
+That's it, you are ready to roll.
 
 ## Contributing
 
