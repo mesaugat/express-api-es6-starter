@@ -13,7 +13,7 @@ let router = Router();
  *     type: object
  *     properties:
  *       id:
- *         type: number
+ *         type: integer
  *         description: Unique identifier representing a specific user
  *       name:
  *         type: string
@@ -87,10 +87,48 @@ router.get('/', (req, res, next) => {
 
 /**
  * @swagger
+ * /users/{id}:
+ *   get:
+ *     summary: Get an user
+ *     description: Get user information
+ *     produces:
+ *       - application/json
+ *     tags:
+ *       - users
+ *     parameters:
+ *       - name: id
+ *         description: Unique identifier of the user
+ *         in: path
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: User object
+ *         schema:
+ *           title: User
+ *           type: object
+ *           $ref: '#/definitions/User'
+ *       404:
+ *         description: User not found
+ *         schema:
+ *           $ref: '#/definitions/NotFoundError'
+ *       500:
+ *         description: Internal server error
+ *         schema:
+ *           $ref: '#/definitions/ServerError'
+ */
+router.get('/:id', (req, res, next) => {
+  userService.getUser(req.params.id)
+    .then(data => res.json({data}))
+    .catch(err => next(err));
+});
+
+/**
+ * @swagger
  * /users:
  *   post:
  *     summary: Create a new user
- *     description: Create a user
+ *     description: Create an user
  *     produces:
  *       - application/json
  *     tags:
@@ -138,7 +176,7 @@ router.post('/', userValidator, (req, res, next) => {
  *         description: Unique identifier of the user
  *         in: path
  *         required: true
- *         type: number
+ *         type: integer
  *       - name: name
  *         description: Name of the user
  *         in: body
@@ -195,7 +233,7 @@ router.put('/:id', findUser, userValidator, (req, res, next) => {
  *         description: Unique identifier of the user
  *         in: path
  *         required: true
- *         type: number
+ *         type: integer
  *     responses:
  *       204:
  *         description: User deleted (no-content)
