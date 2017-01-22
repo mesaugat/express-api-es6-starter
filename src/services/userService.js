@@ -1,3 +1,4 @@
+import Boom from 'boom';
 import User from '../models/user';
 
 /**
@@ -7,6 +8,23 @@ import User from '../models/user';
  */
 export async function getAllUsers() {
   return await User.fetchAll();
+}
+
+/**
+ * Get a user.
+ *
+ * @param  {number|string}  id
+ * @return {Promise}
+ */
+export async function getUser(id) {
+  return await new User({id}).fetch()
+    .then(user => {
+      if (!user) {
+        throw new Boom.notFound('User not found');
+      }
+
+      return user;
+    });
 }
 
 /**

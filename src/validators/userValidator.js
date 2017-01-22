@@ -1,7 +1,6 @@
 import Joi from 'joi';
-import Boom from 'boom';
-import User from '../models/user';
 import validate from '../utils/validate';
+import * as userService from '../services/userService';
 
 const SCHEMA = {
   name: Joi.string().label('Name').max(90).required()
@@ -30,17 +29,8 @@ function userValidator(req, res, next) {
  * @return {function}
  */
 function findUser(req, res, next) {
-  User.forge({id: req.params.id})
-    .fetch()
-    .then(user => {
-      if (!user) {
-        let err = Boom.notFound('User not found');
-
-        return next(err);
-      }
-
-      return next();
-    })
+  return userService.getUser(req.params.id)
+    .then(() => next())
     .catch(err => next(err));
 }
 
