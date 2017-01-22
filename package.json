@@ -8,10 +8,10 @@
     "lint": "eslint src; exit 0",
     "seed": "knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
-    "start:dev": "nodemon --exec babel-node src --source-maps",
     "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
     "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js",
-    "test": "NODE_ENV=test mocha --recursive --require babel-register test"
+    "test": "NODE_ENV=test mocha --recursive --require babel-register test",
+    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps"
   },
   "keywords": [
     "javascript",
