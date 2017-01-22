@@ -59,6 +59,34 @@ describe('Users Controller Test', () => {
         expect(res.body.data).to.have.property('name');
         expect(res.body.data).to.have.property('created_at');
         expect(res.body.data).to.have.property('updated_at');
+        expect(res.body.data.name).to.be.equal(user.name);
+
+        done();
+      });
+  });
+
+  it('should get information of user', done => {
+    request(app)
+      .get('/api/users/1')
+      .end((err, res) => {
+        expect(res.statusCode).to.be.equal(200);
+        expect(res.body.data).to.be.an('object');
+        expect(res.body.data).to.have.property('id');
+        expect(res.body.data).to.have.property('name');
+        expect(res.body.data).to.have.property('created_at');
+        expect(res.body.data).to.have.property('updated_at');
+
+        done();
+      });
+  });
+
+  it('should respond with not found error if random user id is provided', done => {
+    request(app)
+      .get('/api/users/1991')
+      .end((err, res) => {
+        expect(res.statusCode).to.be.equal(404);
+        expect(res.body.error.code).to.be.equal(404);
+        expect(res.body.error.message).to.be.equal('User not found');
 
         done();
       });
@@ -78,6 +106,7 @@ describe('Users Controller Test', () => {
         expect(res.body.data).to.have.property('id');
         expect(res.body.data).to.have.property('name');
         expect(res.body.data).to.have.property('updated_at');
+        expect(res.body.data).to.not.have.property('created_at');
         expect(res.body.data.name).to.be.equal(user.name);
 
         done();
