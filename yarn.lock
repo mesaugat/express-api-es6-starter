@@ -693,6 +693,12 @@ body-parser@^1.15.2:
     raw-body "~2.1.7"
     type-is "~1.6.13"
 
+bookshelf-camelcase@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/bookshelf-camelcase/-/bookshelf-camelcase-1.1.4.tgz#34d3083ca27c33991a183a58349bd1197f2066fa"
+  dependencies:
+    lodash "^4.13.1"
+
 bookshelf@^0.10.2:
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/bookshelf/-/bookshelf-0.10.2.tgz#f3fb9adec7535c15699745224df1de479b6bd17f"

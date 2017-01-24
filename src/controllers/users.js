@@ -18,14 +18,21 @@ let router = Router();
  *       name:
  *         type: string
  *         description: Name of the user
- *       created_at:
+ *       createdAt:
  *         type: string
  *         format: date-time
  *         description: User creation datetime
- *       updated_at:
+ *       updatedAt:
  *         type: string
  *         format: date-time
  *         description: User update datetime
+ *   NewUser:
+ *     title: NewUser
+ *     type: object
+ *     properties:
+ *       name:
+ *         type: string
+ *         description: Name of the user
  *   Error:
  *     title: Error
  *     type: object
@@ -60,25 +67,25 @@ let router = Router();
  *                   type: string
  */
 
- /**
-  * @swagger
-  * /users:
-  *   get:
-  *     summary: List all users
-  *     description: Returns users
-  *     produces:
-  *       - application/json
-  *     tags:
-  *       - users
-  *     responses:
-  *       200:
-  *         description: An array of users
-  *         schema:
-  *           title: Users
-  *           type: array
-  *           items:
-  *             $ref: '#/definitions/User'
-  */
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: List all users
+ *     description: Returns users
+ *     produces:
+ *       - application/json
+ *     tags:
+ *       - Users
+ *     responses:
+ *       200:
+ *         description: An array of users
+ *         schema:
+ *           title: Users
+ *           type: array
+ *           items:
+ *             $ref: '#/definitions/User'
+ */
 router.get('/', (req, res, next) => {
   userService.getAllUsers()
     .then(data => res.json({data}))
@@ -94,7 +101,7 @@ router.get('/', (req, res, next) => {
  *     produces:
  *       - application/json
  *     tags:
- *       - users
+ *       - Users
  *     parameters:
  *       - name: id
  *         description: Unique identifier of the user
@@ -132,13 +139,14 @@ router.get('/:id', (req, res, next) => {
  *     produces:
  *       - application/json
  *     tags:
- *       - users
+ *       - Users
  *     parameters:
- *       - name: name
- *         description: Name of the user
+ *       - name: UserParams
+ *         description: POST params for an user
  *         in: body
  *         required: true
- *         type: string
+ *         schema:
+ *           $ref: '#/definitions/NewUser'
  *     responses:
  *       201:
  *         description: Newly created user object
@@ -170,18 +178,19 @@ router.post('/', userValidator, (req, res, next) => {
  *     produces:
  *       - application/json
  *     tags:
- *       - users
+ *       - Users
  *     parameters:
  *       - name: id
  *         description: Unique identifier of the user
  *         in: path
  *         required: true
  *         type: integer
- *       - name: name
- *         description: Name of the user
+ *       - name: UserParams
+ *         description: PUT params for an user
  *         in: body
  *         required: true
- *         type: string
+ *         schema:
+ *           $ref: '#/definitions/NewUser'
  *     responses:
  *       200:
  *         description: Updated user object
@@ -195,7 +204,7 @@ router.post('/', userValidator, (req, res, next) => {
  *             name:
  *               type: string
  *               description: Name of the user
- *             updated_at:
+ *             updatedAt:
  *               type: string
  *               format: date-time
  *               description: Updated user datetime
@@ -227,7 +236,7 @@ router.put('/:id', findUser, userValidator, (req, res, next) => {
  *     produces:
  *       - application/json
  *     tags:
- *       - users
+ *       - Users
  *     parameters:
  *       - name: id
  *         description: Unique identifier of the user
