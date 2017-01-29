@@ -57,8 +57,8 @@ describe('Users Controller Test', () => {
         expect(res.body.data).to.be.an('object');
         expect(res.body.data).to.have.property('id');
         expect(res.body.data).to.have.property('name');
-        expect(res.body.data).to.have.property('created_at');
-        expect(res.body.data).to.have.property('updated_at');
+        expect(res.body.data).to.have.property('createdAt');
+        expect(res.body.data).to.have.property('updatedAt');
         expect(res.body.data.name).to.be.equal(user.name);
 
         done();
@@ -73,8 +73,8 @@ describe('Users Controller Test', () => {
         expect(res.body.data).to.be.an('object');
         expect(res.body.data).to.have.property('id');
         expect(res.body.data).to.have.property('name');
-        expect(res.body.data).to.have.property('created_at');
-        expect(res.body.data).to.have.property('updated_at');
+        expect(res.body.data).to.have.property('createdAt');
+        expect(res.body.data).to.have.property('updatedAt');
 
         done();
       });
@@ -105,8 +105,8 @@ describe('Users Controller Test', () => {
         expect(res.body.data).to.be.an('object');
         expect(res.body.data).to.have.property('id');
         expect(res.body.data).to.have.property('name');
-        expect(res.body.data).to.have.property('updated_at');
-        expect(res.body.data).to.not.have.property('created_at');
+        expect(res.body.data).to.have.property('createdAt');
+        expect(res.body.data).to.have.property('updatedAt');
         expect(res.body.data.name).to.be.equal(user.name);
 
         done();

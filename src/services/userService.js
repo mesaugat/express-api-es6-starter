@@ -34,7 +34,7 @@ export async function getUser(id) {
  * @return {Promise}
  */
 export async function createUser(user) {
-  return await new User({name: user.name}).save();
+  return await new User({name: user.name}).save().then(user => user.refresh());
 }
 
 /**
@@ -45,7 +45,7 @@ export async function createUser(user) {
  * @return {Promise}
  */
 export async function updateUser(id, user) {
-  return await new User({id}).save({name: user.name});
+  return await new User({id}).save({name: user.name}).then(user => user.refresh());
 }
 
 /**
