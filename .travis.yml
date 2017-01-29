@@ -5,4 +5,6 @@ node_js:
 services:
   - postgresql
 before_script:
+  - cp .env.example .env
   - psql -c 'create database express_test;' -U postgres
+  - NODE_ENV=test npm run migrate:latest
