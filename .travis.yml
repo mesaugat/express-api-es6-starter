@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "7"
+  - "6"
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database express_test;' -U postgres
