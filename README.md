@@ -1,6 +1,7 @@
 # Express API ES6 Starter
 
 [![Code Climate](https://codeclimate.com/github/mesaugat/express-api-es6-starter/badges/gpa.svg)](https://codeclimate.com/github/mesaugat/express-api-es6-starter)
+[![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
 
 Starter application for building APIs with [Express.js](http://expressjs.com/)
 
