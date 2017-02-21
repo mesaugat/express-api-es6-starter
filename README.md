@@ -27,7 +27,7 @@ Clone the repository, install the dependencies and get started right away.
     $ git clone git@github.com:mesaugat/express-api-es6-starter.git <application-name>
     $ cd <application-name>
     $ rm -rf .git
-    $ npm install
+    $ npm install   # or yarn
 
 Make a copy of `.env.example` as `.env` and update your application details and database credentials. Now, run the migrations and seed the database.
 
@@ -50,7 +50,9 @@ To run the tests you need to create a separate test database. Don't forget to up
 
 ## Using MySQL instead of PostgreSQL
 
-Install the [mysql](https://www.npmjs.com/package/mysql) driver first and update this line: `DB_CLIENT='pg'` in your .env file to: `DB_CLIENT='mysql'`. You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
+Install the [mysql](https://www.npmjs.com/package/mysql) driver first. Update these lines `DB_CLIENT='pg'` and `DB_PORT='5432'` in your .env file to `DB_CLIENT='mysql'` and `DB_PORT='3306'` respectively.
+
+You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
 
     $ npm install mysql --save
     $ npm uninstall pg --save
