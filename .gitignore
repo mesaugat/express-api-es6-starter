@@ -26,3 +26,6 @@ dist
 
 # Visual Studio Code
 .vscode
+
+# Test Coverage
+coverage

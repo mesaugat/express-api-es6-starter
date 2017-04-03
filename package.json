@@ -11,7 +11,8 @@
     "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
     "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js",
     "test": "NODE_ENV=test mocha --recursive --require babel-register test",
-    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps"
+    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
+    "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
   },
   "keywords": [
     "javascript",
@@ -52,6 +53,7 @@
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "eslint": "^3.12.2",
+    "istanbul": "1.1.0-alpha.1",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "rimraf": "^2.5.4",
