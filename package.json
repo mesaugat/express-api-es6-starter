@@ -6,6 +6,7 @@
     "start": "node dist",
     "prestart": "npm run build",
     "lint": "eslint src; exit 0",
+    "codecov": "cat coverage/*/lcov.info | codecov",
     "seed": "knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
     "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
