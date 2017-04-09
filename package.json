@@ -7,12 +7,14 @@
     "prestart": "npm run build",
     "lint": "eslint src; exit 0",
     "test": "npm run test:server --silent",
+    "codecov": "cat coverage/*/lcov.info | codecov",
     "seed": "knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
     "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
     "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js",
     "test:server": "NODE_ENV=test mocha --recursive --require babel-register test/",
-    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps"
+    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
+    "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
   },
   "keywords": [
     "javascript",
@@ -28,7 +30,7 @@
     "body-parser": "^1.15.2",
     "bookshelf": "^0.10.2",
     "bookshelf-camelcase": "^1.1.4",
-    "boom": "^4.3.0",
+    "boom": "^4.2.0",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "dotenv": "^2.0.0",
@@ -39,6 +41,7 @@
     "knex": "^0.12.6",
     "morgan": "^1.7.0",
     "pg": "^6.1.2",
+    "serve-favicon": "^2.4.2",
     "swagger-jsdoc": "^1.9.0",
     "winston": "^2.3.0",
     "winston-daily-rotate-file": "^1.4.0"
@@ -51,14 +54,16 @@
     "babel-preset-es2017": "^6.16.0",
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
+    "codecov": "^2.1.0",
     "eslint": "^3.12.2",
+    "istanbul": "1.1.0-alpha.1",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "rimraf": "^2.5.4",
     "supertest": "^2.0.1"
   },
   "engines": {
-    "node": ">= 6.5.0",
-    "npm": ">= 3.10.0"
+    "node": ">= 6.9.0",
+    "npm": ">= 3.10.8"
   }
 }

@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
 import routes from './routes';
+import favicon from 'serve-favicon';
 import logger from './utils/logger';
 import bodyParser from 'body-parser';
 import compression from 'compression';
@@ -22,6 +23,7 @@ app.set('host', APP_HOST);
 app.locals.title = process.env.APP_NAME;
 app.locals.version = process.env.APP_VERSION;
 
+app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
 app.use(cors());
 app.use(helmet());
 app.use(compression());
