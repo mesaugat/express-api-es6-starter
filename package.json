@@ -6,11 +6,12 @@
     "start": "node dist",
     "prestart": "npm run build",
     "lint": "eslint src; exit 0",
+    "test": "npm run test:server --silent",
     "seed": "knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
     "migrate:latest": "knex migrate:latest --knexfile src/knexfile.js",
     "migrate:rollback": "knex migrate:rollback --knexfile src/knexfile.js",
-    "test": "NODE_ENV=test mocha --recursive --require babel-register test",
+    "test:server": "NODE_ENV=test mocha --recursive --require babel-register test/",
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps"
   },
   "keywords": [
@@ -27,7 +28,7 @@
     "body-parser": "^1.15.2",
     "bookshelf": "^0.10.2",
     "bookshelf-camelcase": "^1.1.4",
-    "boom": "^4.2.0",
+    "boom": "^4.3.0",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "dotenv": "^2.0.0",
