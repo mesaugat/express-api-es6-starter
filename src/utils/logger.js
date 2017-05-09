@@ -4,7 +4,7 @@ import 'winston-daily-rotate-file';
 
 const logDir = process.env.LOGGING_DIR || 'logs';
 const logLevel = process.env.LOGGING_LEVEL || 'info';
-const tsFormat = new Date().toLocaleTimeString();
+const tsFormat = () => new Date().toLocaleTimeString();
 
 // Create log directory if it does not exist
 if (!fs.existsSync(logDir)) {
