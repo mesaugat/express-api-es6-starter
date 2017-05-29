@@ -32,7 +32,7 @@ Clone the repository, install the dependencies and get started right away.
 
 Make a copy of `.env.example` as `.env` and update your application details and database credentials. Now, run the migrations and seed the database.
 
-    $ npm run migrate:latest
+    $ npm run migrate
     $ npm run seed
 
 Finally, start the application.
@@ -66,4 +66,4 @@ For contribution and feature requests, please create an [issue](https://github.c
 
 ## License
 
-express-api-es6-starter is under [MIT License](http://www.opensource.org/licenses/MIT).
+express-api-es6-starter is under [MIT License](LICENSE.md).
