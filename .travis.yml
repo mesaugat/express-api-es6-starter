@@ -7,7 +7,7 @@ services:
 before_script:
   - cp .env.example .env
   - psql -c 'create database express_test;' -U postgres
-  - NODE_ENV=test npm run migrate:latest
+  - NODE_ENV=test npm run migrate
 script:
   - npm run test:coverage
 after_script:
