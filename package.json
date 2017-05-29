@@ -4,6 +4,7 @@
   "description": "Express API ES6 Starter",
   "scripts": {
     "start": "node dist",
+    "precommit": "lint-staged",
     "prestart": "npm run build",
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
@@ -15,6 +16,9 @@
     "test": "NODE_ENV=test mocha --recursive --require babel-register test",
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
     "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
+  },
+  "lint-staged":{
+    "*.js": ["eslint --fix", "git add"]
   },
   "keywords": [
     "javascript",
@@ -56,7 +60,9 @@
     "chai": "^3.5.0",
     "codecov": "^2.1.0",
     "eslint": "^3.12.2",
+    "husky": "^0.13.4",
     "istanbul": "1.1.0-alpha.1",
+    "lint-staged": "^3.5.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "rimraf": "^2.5.4",
