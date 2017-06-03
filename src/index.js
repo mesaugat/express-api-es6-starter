@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 import './env';
 import './db';
 import cors from 'cors';
