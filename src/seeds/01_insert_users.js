@@ -11,8 +11,8 @@ export function seed(knex, Promise) {
     .then(() => {
       return Promise.all([
         // Inserts seed entries
-        knex('users').insert({name: 'Saugat Acharya', updated_at: new Date()}),
-        knex('users').insert({name: 'John Doe', updated_at: new Date()})
+        knex('users').insert({ name: 'Saugat Acharya', updated_at: new Date() }),
+        knex('users').insert({ name: 'John Doe', updated_at: new Date() })
       ]);
     });
 }

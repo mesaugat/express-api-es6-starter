@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import swaggerSpec from './utils/swagger';
 import usersController from './controllers/users';
 

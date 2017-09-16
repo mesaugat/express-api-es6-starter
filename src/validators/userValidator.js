@@ -34,4 +34,4 @@ function findUser(req, res, next) {
     .catch(err => next(err));
 }
 
-export {findUser, userValidator};
+export { findUser, userValidator };

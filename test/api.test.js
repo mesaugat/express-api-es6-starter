@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import app from '../src/index';
 import request from 'supertest';
 
