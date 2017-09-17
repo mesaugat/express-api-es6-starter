@@ -3,12 +3,12 @@ import HttpStatus from 'http-status-codes';
 /**
  * Build error response for validation errors.
  *
- * @param  {error} err
- * @return {array|object}
+ * @param  {Error} err
+ * @return {Object}
  */
 function buildError(err) {
   // Validation errors
-  if (err.isJoi || err instanceof SyntaxError) {
+  if (err.isJoi) {
     return {
       code: HttpStatus.BAD_REQUEST,
       message: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),

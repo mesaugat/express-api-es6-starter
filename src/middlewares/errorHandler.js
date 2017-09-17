@@ -5,11 +5,11 @@ import buildError from '../utils/buildError';
 /**
  * Error response middleware for 404 not found. This middleware function should be at the very bottom of the stack.
  *
- * @param  {object}   req
- * @param  {object}   res
- * @param  {function} next
+ * @param  {Object}   req
+ * @param  {Object}   res
+ * @param  {Function} next
  */
-export function notFoundError(req, res, next) { // eslint-disable-line no-unused-vars
+export function notFoundError(req, res) {
   res.status(HttpStatus.NOT_FOUND).json({
     error: {
       code: HttpStatus.NOT_FOUND,
@@ -19,17 +19,37 @@ export function notFoundError(req, res, next) { // eslint-disable-line no-unused
 }
 
 /**
+ * To handle errors from body parser for cases such as invalid JSON
+ * sent through the body.
+ *
+ * https://github.com/expressjs/body-parser#errors
+ *
+ * @param  {Object}   err
+ * @param  {Object}   req
+ * @param  {Object}   res
+ * @param  {Function} next
+ */
+export function bodyParser(err, req, res, next) {  // eslint-disable-line no-unused-vars
+  logger.error(err);
+
+  res.status(err.status).json({
+    error: {
+      code: err.status,
+      message: HttpStatus.getStatusText(err.status)
+    }
+  });
+}
+
+/**
  * Generic error response middleware for validation and internal server errors.
  *
- * @param  {object}   err
- * @param  {object}   req
- * @param  {object}   res
- * @param  {function} next
+ * @param  {Object}   err
+ * @param  {Object}   req
+ * @param  {Object}   res
+ * @param  {Function} next
  */
 export function genericErrorHandler(err, req, res, next) {  // eslint-disable-line no-unused-vars
-  if (err.stack) {
-    logger.debug(err.stack);
-  }
+  logger.error(err);
 
   let error = buildError(err);
   res.status(error.code).json({ error });
