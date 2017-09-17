@@ -47,6 +47,7 @@
     "http-status-codes": "^1.1.6",
     "joi": "^11.0.1",
     "knex": "^0.13.0",
+    "lodash": "^4.17.4",
     "morgan": "^1.8.2",
     "pg": "^7.3.0",
     "serve-favicon": "^2.4.3",
