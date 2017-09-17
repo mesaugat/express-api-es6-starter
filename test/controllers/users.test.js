@@ -168,4 +168,22 @@ describe('Users Controller Test', () => {
         done();
       });
   });
+
+  it('should respond with bad request for empty JSON in request body', done => {
+    let user = {};
+
+    request(app)
+      .post('/api/users')
+      .send(user)
+      .end((err, res) => {
+        let { code, message } = res.body.error;
+
+        expect(res.statusCode).to.be.equal(400);
+        expect(code).to.be.equal(400);
+        expect(message).to.be.equal('Empty JSON');
+
+        done();
+      });
+  });
+  
 });
