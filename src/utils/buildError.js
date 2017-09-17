@@ -15,7 +15,7 @@ function buildError(err) {
       details: err.details && err.details.map(err => {
         return {
           message: err.message,
-          param: err.path
+          param: err.path.join('.')
         };
       })
     };
