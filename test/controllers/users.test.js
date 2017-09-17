@@ -33,12 +33,14 @@ describe('Users Controller Test', () => {
       .post('/api/users')
       .send(user)
       .end((err, res) => {
+        let { code, message, details } = res.body.error;
+
         expect(res.statusCode).to.be.equal(400);
-        expect(res.body.error.code).to.be.equal(400);
-        expect(res.body.error.message).to.be.equal('Bad Request');
-        expect(res.body.error.details).to.be.an('array');
-        expect(res.body.error.details[0]).to.have.property('message');
-        expect(res.body.error.details[0]).to.have.property('param', 'name');
+        expect(code).to.be.equal(400);
+        expect(message).to.be.equal('Bad Request');
+        expect(details).to.be.an('array');
+        expect(details[0]).to.have.property('message');
+        expect(details[0]).to.have.property('param', 'name');
 
         done();
       });
@@ -53,13 +55,15 @@ describe('Users Controller Test', () => {
       .post('/api/users')
       .send(user)
       .end((err, res) => {
+        let { data } = res.body;
+
         expect(res.statusCode).to.be.equal(201);
-        expect(res.body.data).to.be.an('object');
-        expect(res.body.data).to.have.property('id');
-        expect(res.body.data).to.have.property('name');
-        expect(res.body.data).to.have.property('createdAt');
-        expect(res.body.data).to.have.property('updatedAt');
-        expect(res.body.data.name).to.be.equal(user.name);
+        expect(data).to.be.an('object');
+        expect(data).to.have.property('id');
+        expect(data).to.have.property('name');
+        expect(data).to.have.property('createdAt');
+        expect(data).to.have.property('updatedAt');
+        expect(data.name).to.be.equal(user.name);
 
         done();
       });
@@ -69,12 +73,14 @@ describe('Users Controller Test', () => {
     request(app)
       .get('/api/users/1')
       .end((err, res) => {
+        let { data } = res.body;
+
         expect(res.statusCode).to.be.equal(200);
-        expect(res.body.data).to.be.an('object');
-        expect(res.body.data).to.have.property('id');
-        expect(res.body.data).to.have.property('name');
-        expect(res.body.data).to.have.property('createdAt');
-        expect(res.body.data).to.have.property('updatedAt');
+        expect(data).to.be.an('object');
+        expect(data).to.have.property('id');
+        expect(data).to.have.property('name');
+        expect(data).to.have.property('createdAt');
+        expect(data).to.have.property('updatedAt');
 
         done();
       });
@@ -84,9 +90,11 @@ describe('Users Controller Test', () => {
     request(app)
       .get('/api/users/1991')
       .end((err, res) => {
+        let { code, message } = res.body.error;
+
         expect(res.statusCode).to.be.equal(404);
-        expect(res.body.error.code).to.be.equal(404);
-        expect(res.body.error.message).to.be.equal('User not found');
+        expect(code).to.be.equal(404);
+        expect(message).to.be.equal('User not found');
 
         done();
       });
@@ -101,13 +109,15 @@ describe('Users Controller Test', () => {
       .put('/api/users/1')
       .send(user)
       .end((err, res) => {
+        let { data } = res.body;
+
         expect(res.statusCode).to.be.equal(200);
-        expect(res.body.data).to.be.an('object');
-        expect(res.body.data).to.have.property('id');
-        expect(res.body.data).to.have.property('name');
-        expect(res.body.data).to.have.property('createdAt');
-        expect(res.body.data).to.have.property('updatedAt');
-        expect(res.body.data.name).to.be.equal(user.name);
+        expect(data).to.be.an('object');
+        expect(data).to.have.property('id');
+        expect(data).to.have.property('name');
+        expect(data).to.have.property('createdAt');
+        expect(data).to.have.property('updatedAt');
+        expect(data.name).to.be.equal(user.name);
 
         done();
       });
@@ -122,12 +132,14 @@ describe('Users Controller Test', () => {
       .put('/api/users/1')
       .send(user)
       .end((err, res) => {
+        let { code, message, details } = res.body.error;
+
         expect(res.statusCode).to.be.equal(400);
-        expect(res.body.error.code).to.be.equal(400);
-        expect(res.body.error.message).to.be.equal('Bad Request');
-        expect(res.body.error.details).to.be.an('array');
-        expect(res.body.error.details[0]).to.have.property('message');
-        expect(res.body.error.details[0]).to.have.property('param', 'name');
+        expect(code).to.be.equal(400);
+        expect(message).to.be.equal('Bad Request');
+        expect(details).to.be.an('array');
+        expect(details[0]).to.have.property('message');
+        expect(details[0]).to.have.property('param', 'name');
 
         done();
       });
@@ -147,9 +159,11 @@ describe('Users Controller Test', () => {
     request(app)
       .delete('/api/users/1991')
       .end((err, res) => {
+        let { code, message } = res.body.error;
+
         expect(res.statusCode).to.be.equal(404);
-        expect(res.body.error.code).to.be.equal(404);
-        expect(res.body.error.message).to.be.equal('User not found');
+        expect(code).to.be.equal(404);
+        expect(message).to.be.equal('User not found');
 
         done();
       });
