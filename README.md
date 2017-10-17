@@ -1,4 +1,4 @@
-# ![Express API ES6 Starter](https://i.imgur.com/qeAbxtQ.png "Express API ES6 Starter")
+![Express API ES6 Starter](https://i.imgur.com/qeAbxtQ.png "Express API ES6 Starter")
 
 [![Code Climate](https://codeclimate.com/github/mesaugat/express-api-es6-starter/badges/gpa.svg)](https://codeclimate.com/github/mesaugat/express-api-es6-starter)
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
