@@ -1,13 +1,13 @@
-version: '2'
+version: '3'
 services:
-  express-api-es6-example:
+  express-api-es6-starter:
     build: .
     volumes:
       - .env.docker:/app/.env
     ports:
       - "8848:8848"
     entrypoint: /bin/sh
-    command: -c "sleep 5 && npm run migrate && npm run seed && npm run start:dev"
+    command: -c "sleep 5 && yarn migrate && yarn seed && yarn start:dev"
     depends_on:
       - pg
     links:
