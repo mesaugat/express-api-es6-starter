@@ -43,7 +43,7 @@ app.use('/api', routes);
 
 // Error Middlewares
 app.use(errorHandler.genericErrorHandler);
-app.use(errorHandler.notFoundError);
+app.use(errorHandler.methodNotAllowed);
 
 app.listen(app.get('port'), app.get('host'), () => {
   logger.log('info', `Server started at http://${app.get('host')}:${app.get('port')}`);

@@ -3,11 +3,10 @@ import HttpStatus from 'http-status-codes';
 import buildError from '../utils/buildError';
 
 /**
- * Error response middleware for 404 not found. This middleware function should be at the very bottom of the stack.
+ * Error response middleware for 404 not found.
  *
- * @param  {Object}   req
- * @param  {Object}   res
- * @param  {Function} next
+ * @param {Object} req
+ * @param {Object} res
  */
 export function notFoundError(req, res) {
   res.status(HttpStatus.NOT_FOUND).json({
@@ -19,8 +18,22 @@ export function notFoundError(req, res) {
 }
 
 /**
- * To handle errors from body parser for cases such as invalid JSON
- * sent through the body.
+ * Method not allowed error middleware. This middleware should be placed at
+ * the very bottom of the middleware stack.
+ *
+ * @param {Object} req
+ * @param {Object} res
+ */
+export function methodNotAllowed(req, res) {
+  res.status(HttpStatus.METHOD_NOT_ALLOWED).json({
+    code: HttpStatus.METHOD_NOT_ALLOWED,
+    message: HttpStatus.getStatusText(HttpStatus.METHOD_NOT_ALLOWED)
+  });
+}
+
+/**
+ * To handle errors from body parser for cases such as invalid JSON sent through
+ * the body.
  *
  * https://github.com/expressjs/body-parser#errors
  *
