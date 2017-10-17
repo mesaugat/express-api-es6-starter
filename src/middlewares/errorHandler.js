@@ -26,8 +26,10 @@ export function notFoundError(req, res) {
  */
 export function methodNotAllowed(req, res) {
   res.status(HttpStatus.METHOD_NOT_ALLOWED).json({
-    code: HttpStatus.METHOD_NOT_ALLOWED,
-    message: HttpStatus.getStatusText(HttpStatus.METHOD_NOT_ALLOWED)
+    error: {
+      code: HttpStatus.METHOD_NOT_ALLOWED,
+      message: HttpStatus.getStatusText(HttpStatus.METHOD_NOT_ALLOWED)
+    }
   });
 }
 

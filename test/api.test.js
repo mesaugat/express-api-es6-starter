@@ -16,15 +16,15 @@ describe('Base API Test', () => {
       });
   });
 
-  it('should return 404 for random API hits', done => {
+  it('should return 405 method not allowed for random API hits', done => {
     let randomString = Math.random().toString(36).substr(2, 5);
 
     request(app)
       .get(`/api/${randomString}`)
       .end((err, res) => {
-        expect(res.statusCode).to.be.equal(404);
-        expect(res.body.error.code).to.be.equal(404);
-        expect(res.body.error.message).to.be.equal('Not Found');
+        expect(res.statusCode).to.be.equal(405);
+        expect(res.body.error.code).to.be.equal(405);
+        expect(res.body.error.message).to.be.equal('Method Not Allowed');
 
         done();
       });
