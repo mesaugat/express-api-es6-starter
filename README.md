@@ -6,6 +6,8 @@
 
 Starter application for building APIs with [Express.js](http://expressjs.com/)
 
+![Express API ES6 Starter](https://i.imgur.com/qeAbxtQ.png "Express API ES6 Starter")
+
 Comes with:
 
 * [ES6](http://babeljs.io/learn-es2015/) features/modules
@@ -21,13 +23,11 @@ Comes with:
 
 ---
 
-## Prerequisites
+## Prerequisite
 
 * [Node.js](https://yarnpkg.com/en/docs/install) - 6.9.0 or above
 * [Yarn](https://yarnpkg.com/en/docs/install) - 1.0.0 or above
 * [NPM](https://docs.npmjs.com/getting-started/installing-node) - 3.10.8 or above
-
----
 
 ## Setup
 
