@@ -1,5 +1,4 @@
 .git
-README.md
 .env*
 .editorconfig
 .gitignore
