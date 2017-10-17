@@ -29,3 +29,6 @@ dist
 
 # Test Coverage
 coverage
+
+# Vim swp files
+*.swp

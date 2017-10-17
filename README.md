@@ -21,7 +21,7 @@ Comes with:
 
 ---
 
-## Installation
+## Setup
 
 Clone the repository, install the dependencies and get started right away.
 
@@ -40,14 +40,25 @@ Finally, start the application.
     $ npm run start:dev (For development)
     $ npm start (For production)
 
-Navigate to `/api-docs` for the API documentation.
+Navigate to http://localhost:8848/api-docs/ to verify installation.
 
-## Tests
+## Setup Using Docker
 
-To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the name of the test database and run the migrations.
+Use [docker-compose](https://docs.docker.com/compose/) to quickly bring up a stack with pre-configured Postgres database container. Data is ephemeral and containers will disappear when stack is removed.
 
-    $ NODE_ENV=test npm run migrate:latest
-    $ npm test
+Specific configuration for Docker is in `.env.docker`
+- `0.0.0.0` as `$APP_HOST` to expose app on Docker network interface
+- Pre-configured Postgres settings - can be updated to point to another Postgres host
+
+Bring up stack,
+
+    $ docker-compose up
+
+Navigate to http://localhost:8848/api-docs/ to verify application is running from docker.
+
+Bring down stack,
+
+    $ docker-compose down
 
 ## Using MySQL instead of PostgreSQL
 
@@ -59,6 +70,13 @@ You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
     $ npm uninstall pg --save
 
 That's it, you are ready to roll.
+
+## Tests
+
+To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the name of the test database and run the migrations.
+
+    $ NODE_ENV=test npm run migrate:latest
+    $ npm test
 
 ## Contributing
 

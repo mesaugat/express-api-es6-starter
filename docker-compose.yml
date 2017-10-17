@@ -1,0 +1,20 @@
+version: '3'
+services:
+  express-api-es6-starter:
+    build: .
+    volumes:
+      - .env.docker:/app/.env
+    ports:
+      - "8848:8848"
+    entrypoint: /bin/sh
+    command: -c "sleep 5 && yarn migrate && yarn seed && yarn start:dev"
+    depends_on:
+      - pg
+    links:
+      - pg
+  pg:
+    image: postgres:9-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=express
