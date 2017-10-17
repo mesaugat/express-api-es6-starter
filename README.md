@@ -21,6 +21,14 @@ Comes with:
 
 ---
 
+## Prerequisites
+
+* [Node.js](https://yarnpkg.com/en/docs/install) - 6.9.0 or above
+* [Yarn](https://yarnpkg.com/en/docs/install) - 1.0.0 or above
+* [NPM](https://docs.npmjs.com/getting-started/installing-node) - 3.10.8 or above
+
+---
+
 ## Setup
 
 Clone the repository, install the dependencies and get started right away.
@@ -28,17 +36,17 @@ Clone the repository, install the dependencies and get started right away.
     $ git clone git@github.com:mesaugat/express-api-es6-starter.git <application-name>
     $ cd <application-name>
     $ rm -rf .git
-    $ npm install   # or yarn
+    $ yarn   # or npm install
 
 Make a copy of `.env.example` as `.env` and update your application details and database credentials. Now, run the migrations and seed the database.
 
-    $ npm run migrate
-    $ npm run seed
+    $ yarn migrate
+    $ yarn seed
 
 Finally, start the application.
 
-    $ npm run start:dev (For development)
-    $ npm start (For production)
+    $ yarn start:dev (For development)
+    $ yarn start (For production)
 
 Navigate to http://localhost:8848/api-docs/ to verify installation.
 
@@ -66,8 +74,8 @@ Install the [mysql](https://www.npmjs.com/package/mysql) driver first. Update th
 
 You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
 
-    $ npm install mysql --save
-    $ npm uninstall pg --save
+    $ yarn add mysql
+    $ yarn remove pg
 
 That's it, you are ready to roll.
 
@@ -75,8 +83,8 @@ That's it, you are ready to roll.
 
 To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the name of the test database and run the migrations.
 
-    $ NODE_ENV=test npm run migrate:latest
-    $ npm test
+    $ NODE_ENV=test yarn migrate:latest
+    $ yarn test
 
 ## Contributing
 
