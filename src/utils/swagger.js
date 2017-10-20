@@ -21,7 +21,12 @@ const swaggerOptions = {
   // import swaggerDefinitions
   swaggerDefinition: swaggerDefinition,
   // path to the API docs
-  apis: [path.join(__dirname, '/../routes.js'), path.join(__dirname, '/../docs/*.js')]
+  apis: [
+    path.join(__dirname, '/../routes.js'),
+    path.join(__dirname, '/../docs/*.js'),
+    path.join(__dirname, '/../docs/*.yml'),
+    path.join(__dirname, '/../docs/*.yaml')
+  ]
 };
 
 /**
