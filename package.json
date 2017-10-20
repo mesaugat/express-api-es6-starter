@@ -14,6 +14,7 @@
     "migrate": "knex migrate:latest --knexfile src/knexfile.js",
     "rollback": "knex migrate:rollback --knexfile src/knexfile.js",
     "test": "NODE_ENV=test mocha --recursive --require babel-register test",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
     "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
   },
@@ -70,6 +71,7 @@
     "lint-staged": "^4.2.1",
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
+    "prettier": "^1.7.4",
     "rimraf": "^2.6.1",
     "supertest": "^3.0.0"
   },
