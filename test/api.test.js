@@ -3,7 +3,6 @@ import app from '../src/index';
 import request from 'supertest';
 
 describe('Base API Test', () => {
-
   it('should return API version and title for the app', done => {
     request(app)
       .get('/api')
@@ -17,7 +16,9 @@ describe('Base API Test', () => {
   });
 
   it('should return 405 method not allowed for random API hits', done => {
-    let randomString = Math.random().toString(36).substr(2, 5);
+    let randomString = Math.random()
+      .toString(36)
+      .substr(2, 5);
 
     request(app)
       .get(`/api/${randomString}`)
@@ -29,5 +30,4 @@ describe('Base API Test', () => {
         done();
       });
   });
-
 });

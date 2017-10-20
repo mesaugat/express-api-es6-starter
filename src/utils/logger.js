@@ -14,7 +14,7 @@ if (!fs.existsSync(logDir)) {
 /**
  * Create new winston logger instance.
  */
-const logger = new (winston.Logger)({
+const logger = new winston.Logger({
   transports: [
     new winston.transports.Console({
       timestamp: tsFormat,

@@ -4,11 +4,17 @@
     "node": true,
     "mocha": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "prettier",
+    "eslint:recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module"
   },
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "semi": 2,
     "curly": 2,
@@ -24,6 +30,10 @@
     "indent": [2, 2, {"SwitchCase": 1}],
     "object-curly-spacing": [2, "always"],
     "camelcase": [2, {"properties": "never"}],
-    "quotes": [2, "single", {"allowTemplateLiterals": true}]
+    "quotes": [2, "single", {"allowTemplateLiterals": true}],
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "bracketSpacing": true
+    }]
   }
 }

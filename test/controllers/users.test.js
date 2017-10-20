@@ -7,9 +7,11 @@ import bookshelf from '../../src/db';
  * Tests for '/api/users'
  */
 describe('Users Controller Test', () => {
-
   before(done => {
-    bookshelf.knex('users').truncate().then(() => done());
+    bookshelf
+      .knex('users')
+      .truncate()
+      .then(() => done());
   });
 
   it('should return list of users', done => {
@@ -185,5 +187,4 @@ describe('Users Controller Test', () => {
         done();
       });
   });
-  
 });

@@ -12,12 +12,14 @@ function buildError(err) {
     return {
       code: HttpStatus.BAD_REQUEST,
       message: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
-      details: err.details && err.details.map(err => {
-        return {
-          message: err.message,
-          param: err.path.join('.')
-        };
-      })
+      details:
+        err.details &&
+        err.details.map(err => {
+          return {
+            message: err.message,
+            param: err.path.join('.')
+          };
+        })
     };
   }
 
