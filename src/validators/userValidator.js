@@ -6,7 +6,7 @@ const SCHEMA = {
   name: Joi.string()
     .label('Name')
     .max(90)
-    .required(),
+    .required()
 };
 
 /**

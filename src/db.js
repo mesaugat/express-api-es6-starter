@@ -12,7 +12,7 @@ bookshelf.plugin([
   'virtuals',
   'pagination',
   'visibility',
-  'bookshelf-camelcase',
+  'bookshelf-camelcase'
 ]);
 
 export default bookshelf;

@@ -12,8 +12,8 @@ export function notFoundError(req, res) {
   res.status(HttpStatus.NOT_FOUND).json({
     error: {
       code: HttpStatus.NOT_FOUND,
-      message: HttpStatus.getStatusText(HttpStatus.NOT_FOUND),
-    },
+      message: HttpStatus.getStatusText(HttpStatus.NOT_FOUND)
+    }
   });
 }
 
@@ -28,8 +28,8 @@ export function methodNotAllowed(req, res) {
   res.status(HttpStatus.METHOD_NOT_ALLOWED).json({
     error: {
       code: HttpStatus.METHOD_NOT_ALLOWED,
-      message: HttpStatus.getStatusText(HttpStatus.METHOD_NOT_ALLOWED),
-    },
+      message: HttpStatus.getStatusText(HttpStatus.METHOD_NOT_ALLOWED)
+    }
   });
 }
 
@@ -51,8 +51,8 @@ export function bodyParser(err, req, res, next) {
   res.status(err.status).json({
     error: {
       code: err.status,
-      message: HttpStatus.getStatusText(err.status),
-    },
+      message: HttpStatus.getStatusText(err.status)
+    }
   });
 }
 
