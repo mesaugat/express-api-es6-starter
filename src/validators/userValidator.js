@@ -3,7 +3,10 @@ import validate from '../utils/validate';
 import * as userService from '../services/userService';
 
 const SCHEMA = {
-  name: Joi.string().label('Name').max(90).required()
+  name: Joi.string()
+    .label('Name')
+    .max(90)
+    .required(),
 };
 
 /**
@@ -29,7 +32,8 @@ function userValidator(req, res, next) {
  * @return {Promise}
  */
 function findUser(req, res, next) {
-  return userService.getUser(req.params.id)
+  return userService
+    .getUser(req.params.id)
     .then(() => next())
     .catch(err => next(err));
 }

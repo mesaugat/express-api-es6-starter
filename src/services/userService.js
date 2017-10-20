@@ -17,14 +17,13 @@ export function getAllUsers() {
  * @return {Promise}
  */
 export function getUser(id) {
-  return new User({ id }).fetch()
-    .then(user => {
-      if (!user) {
-        throw new Boom.notFound('User not found');
-      }
+  return new User({ id }).fetch().then(user => {
+    if (!user) {
+      throw new Boom.notFound('User not found');
+    }
 
-      return user;
-    });
+    return user;
+  });
 }
 
 /**
@@ -45,7 +44,9 @@ export function createUser(user) {
  * @return {Promise}
  */
 export function updateUser(id, user) {
-  return new User({ id }).save({ name: user.name }).then(user => user.refresh());
+  return new User({ id })
+    .save({ name: user.name })
+    .then(user => user.refresh());
 }
 
 /**

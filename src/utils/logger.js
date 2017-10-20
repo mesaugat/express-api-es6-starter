@@ -14,21 +14,21 @@ if (!fs.existsSync(logDir)) {
 /**
  * Create new winston logger instance.
  */
-const logger = new (winston.Logger)({
+const logger = new winston.Logger({
   transports: [
     new winston.transports.Console({
       timestamp: tsFormat,
       colorize: true,
-      level: 'info'
+      level: 'info',
     }),
     new winston.transports.DailyRotateFile({
       filename: `${logDir}/-debug.log`,
       timestamp: tsFormat,
       datePattern: 'yyyy-MM-dd',
       prepend: true,
-      level: logLevel
-    })
-  ]
+      level: logLevel,
+    }),
+  ],
 });
 
 export default logger;
