@@ -7,9 +7,11 @@ import bookshelf from '../../src/db';
  * Tests for '/api/users'
  */
 describe('Users Controller Test', () => {
-
   before(done => {
-    bookshelf.knex('users').truncate().then(() => done());
+    bookshelf
+      .knex('users')
+      .truncate()
+      .then(() => done());
   });
 
   it('should return list of users', done => {
@@ -26,7 +28,7 @@ describe('Users Controller Test', () => {
 
   it('should not create a new user if name is not provided', done => {
     let user = {
-      noname: 'Jane Doe'
+      noname: 'Jane Doe',
     };
 
     request(app)
@@ -48,7 +50,7 @@ describe('Users Controller Test', () => {
 
   it('should create a new user with valid data', done => {
     let user = {
-      name: 'Jane Doe'
+      name: 'Jane Doe',
     };
 
     request(app)
@@ -102,7 +104,7 @@ describe('Users Controller Test', () => {
 
   it('should update a user if name is provided', done => {
     let user = {
-      name: 'John Doe'
+      name: 'John Doe',
     };
 
     request(app)
@@ -125,7 +127,7 @@ describe('Users Controller Test', () => {
 
   it('should not update a user if name is not provided', done => {
     let user = {
-      noname: 'John Doe'
+      noname: 'John Doe',
     };
 
     request(app)
@@ -185,5 +187,4 @@ describe('Users Controller Test', () => {
         done();
       });
   });
-  
 });
