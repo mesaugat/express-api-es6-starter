@@ -8,7 +8,7 @@ import buildError from '../utils/buildError';
  * @param {Object} req
  * @param {Object} res
  */
-export function notFoundError(req, res) {
+export function notFound(req, res) {
   res.status(HttpStatus.NOT_FOUND).json({
     error: {
       code: HttpStatus.NOT_FOUND,
@@ -44,7 +44,6 @@ export function methodNotAllowed(req, res) {
  * @param  {Object}   res
  * @param  {Function} next
  */
-// eslint-disable-next-line no-unused-vars
 export function bodyParser(err, req, res, next) {
   logger.error(err);
 
@@ -64,7 +63,6 @@ export function bodyParser(err, req, res, next) {
  * @param  {Object}   res
  * @param  {Function} next
  */
-// eslint-disable-next-line no-unused-vars
 export function genericErrorHandler(err, req, res, next) {
   logger.error(err);
 
