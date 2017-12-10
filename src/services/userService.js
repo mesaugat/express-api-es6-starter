@@ -44,9 +44,7 @@ export function createUser(user) {
  * @return {Promise}
  */
 export function updateUser(id, user) {
-  return new User({ id })
-    .save({ name: user.name })
-    .then(user => user.refresh());
+  return new User({ id }).save({ name: user.name }).then(user => user.refresh());
 }
 
 /**
