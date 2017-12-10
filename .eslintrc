@@ -31,9 +31,7 @@
     "object-curly-spacing": [2, "always"],
     "camelcase": [2, {"properties": "never"}],
     "quotes": [2, "single", {"allowTemplateLiterals": true}],
-    "prettier/prettier": ["error", {
-      "singleQuote": true,
-      "bracketSpacing": true
-    }]
+    "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
+    "prettier/prettier": ["error", {"singleQuote": true, "bracketSpacing": true, "printWidth": 120}]
   }
 }
