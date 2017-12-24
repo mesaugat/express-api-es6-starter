@@ -1,0 +1,17 @@
+/**
+ * @param  {object} knex
+ * @return {Promise}
+ */
+export function up(knex) {
+  return knex.schema.createTable('table_name', table => {
+    table.increments();
+  });
+}
+
+/**
+ * @param  {object} knex
+ * @return {Promise}
+ */
+export function down(knex) {
+  return knex.schema.dropTable('table_name');
+}
