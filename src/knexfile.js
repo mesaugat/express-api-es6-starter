@@ -16,6 +16,12 @@ module.exports = {
     timezone: 'UTC'
   },
   migrations: {
-    tableName: 'migrations'
+    tableName: 'migrations',
+    directory: './migrations',
+    stub: './stubs/migration.stub'
+  },
+  seeds: {
+    directory: './seeds',
+    stub: './stubs/seed.stub'
   }
 };
