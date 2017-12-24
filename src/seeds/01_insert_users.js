@@ -7,18 +7,18 @@
  */
 export function seed(knex, Promise) {
   // Deletes all existing entries
-  return knex("users")
+  return knex('users')
     .del()
     .then(() => {
       return Promise.all([
         // Inserts seed entries
-        knex("users").insert([
+        knex('users').insert([
           {
-            name: "Saugat Acharya",
+            name: 'Saugat Acharya',
             updated_at: new Date()
           },
           {
-            name: "John Doe",
+            name: 'John Doe',
             updated_at: new Date()
           }
         ])
