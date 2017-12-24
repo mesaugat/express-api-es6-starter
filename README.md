@@ -1,4 +1,6 @@
-![Express API ES6 Starter](https://i.imgur.com/qeAbxtQ.png "Express API ES6 Starter")
+<p align="center">
+  <img alt="Express API ES6 Starter" src="https://i.imgur.com/qeAbxtQ.png">
+</p>
 
 [![Code Climate](https://codeclimate.com/github/mesaugat/express-api-es6-starter/badges/gpa.svg)](https://codeclimate.com/github/mesaugat/express-api-es6-starter)
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
@@ -22,7 +24,7 @@ Comes with:
 
 ---
 
-## Prerequisite
+## Prerequisites
 
 * [Node.js](https://yarnpkg.com/en/docs/install) - 6.9.0 or above
 * [Yarn](https://yarnpkg.com/en/docs/install) - 1.0.0 or above
@@ -56,7 +58,7 @@ These are the commands to create a new migration and corresponding seed file.
     $ yarn make:migration <name>
     $ yarn make:seeder <name>
 
-Example:
+Example,
 
     $ yarn make:migration create_tags_table
     $ yarn make:seeder 02_insert_tags
@@ -94,8 +96,12 @@ That's it, you are ready to roll.
 
 To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the name of the test database and run the migrations.
 
-    $ NODE_ENV=test yarn migrate:latest
+    $ NODE_ENV=test yarn migrate
     $ yarn test
+
+Run tests with coverage.
+
+    $ yarn test:coverage
 
 ## Contributing
 
