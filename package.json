@@ -18,7 +18,7 @@
     "test": "NODE_ENV=test mocha --recursive --require babel-register test",
     "prettify": "prettier --single-quote --print-width 120 --write \"src/**/*.js\" \"test/**/*.js\"",
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
-    "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
+    "test:coverage": "NODE_ENV=test nyc --require babel-register --reporter lcov --reporter text mocha --recursive test"
   },
   "lint-staged": {
     "*.js": [
@@ -68,10 +68,10 @@
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-prettier": "^2.3.1",
     "husky": "^0.14.3",
-    "istanbul": "1.1.0-alpha.1",
     "lint-staged": "^4.2.1",
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
+    "nyc": "^11.4.1",
     "prettier": "^1.7.4",
     "rimraf": "^2.6.1",
     "supertest": "^3.0.0"
