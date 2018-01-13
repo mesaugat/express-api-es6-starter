@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
 [![Codecov](https://codecov.io/gh/mesaugat/express-api-es6-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/mesaugat/express-api-es6-starter)
 
-Starter application for building APIs with [Express.js](http://expressjs.com/)
+Starter application for building APIs with [Express.js](http://expressjs.com/) - **[Demo](https://express-api-es6-starter.herokuapp.com/api-docs/)**
 
 Comes with:
 
