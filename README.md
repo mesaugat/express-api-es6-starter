@@ -103,6 +103,10 @@ Run tests with coverage.
 
     $ yarn test:coverage
 
+## Why 8848?
+
+Because the highest point in the world is [8848 metres](https://en.wikipedia.org/wiki/Mount_Everest).
+
 ## Contributing
 
 For contribution and feature requests, please create an [issue](https://github.com/mesaugat/express-api-es6-starter/issues) first.
