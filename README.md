@@ -2,7 +2,6 @@
   <img alt="Express API ES6 Starter" src="https://i.imgur.com/qeAbxtQ.png">
 </p>
 
-[![Code Climate](https://codeclimate.com/github/mesaugat/express-api-es6-starter/badges/gpa.svg)](https://codeclimate.com/github/mesaugat/express-api-es6-starter)
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
 [![Codecov](https://codecov.io/gh/mesaugat/express-api-es6-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/mesaugat/express-api-es6-starter)
 
