@@ -13,7 +13,7 @@ services:
     links:
       - pg
   pg:
-    image: postgres:9-alpine
+    image: postgres:10-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mysecretpassword
