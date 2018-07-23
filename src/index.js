@@ -7,10 +7,10 @@ import morgan from 'morgan';
 import express from 'express';
 import routes from './routes';
 import favicon from 'serve-favicon';
-import logger from './utils/logger';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import json from './middlewares/json';
+import logger, { logStream } from './utils/logger';
 import * as errorHandler from './middlewares/errorHandler';
 
 const app = express();
@@ -29,7 +29,7 @@ app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
 app.use(cors());
 app.use(helmet());
 app.use(compression());
-app.use(morgan('dev'));
+app.use(morgan('tiny', { stream: logStream }));
 app.use(bodyParser.json());
 app.use(errorHandler.bodyParser);
 app.use(json);
@@ -45,7 +45,7 @@ app.use(errorHandler.genericErrorHandler);
 app.use(errorHandler.methodNotAllowed);
 
 app.listen(app.get('port'), app.get('host'), () => {
-  logger.log('info', `Server started at http://${app.get('host')}:${app.get('port')}`);
+  logger.info(`Server started at http://${app.get('host')}:${app.get('port')}/api`);
 });
 
 export default app;
