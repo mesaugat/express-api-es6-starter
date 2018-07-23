@@ -39,7 +39,6 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "bookshelf": "^0.10.3",
-    "bookshelf-camelcase": "^2.0.1",
     "boom": "^5.1.0",
     "compression": "^1.6.2",
     "cors": "^2.8.3",

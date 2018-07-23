@@ -828,13 +828,6 @@ body-parser@^1.17.2:
     raw-body "2.3.2"
     type-is "~1.6.15"
 
-bookshelf-camelcase@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/bookshelf-camelcase/-/bookshelf-camelcase-2.0.1.tgz#0d7791f2aabee6d98d56c87ce10ccb0f81a6553c"
-  dependencies:
-    lodash.camelcase "~4.3.0"
-    lodash.snakecase "~4.1.0"
-
 bookshelf@^0.10.3:
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/bookshelf/-/bookshelf-0.10.4.tgz#fe06984456740417aba13d0d76c7b065d1f1774d"
@@ -2930,10 +2923,6 @@ lodash.assign@^3.0.0:
     lodash._createassigner "^3.0.0"
     lodash.keys "^3.0.0"
 
-lodash.camelcase@~4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-
 lodash.create@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/lodash.create/-/lodash.create-3.1.1.tgz#d7f2849f0dbda7e04682bb8cd72ab022461debe7"
@@ -2980,10 +2969,6 @@ lodash.reduce@4.6.0:
 lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-
-lodash.snakecase@~4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz#39d714a35357147837aefd64b5dcbb16becd8f8d"
 
 lodash@^4.0.0, lodash@^4.13.1, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.0:
   version "4.17.2"
