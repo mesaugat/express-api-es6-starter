@@ -2,6 +2,7 @@ import './env';
 import './db';
 import cors from 'cors';
 import path from 'path';
+import Raven from 'raven';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
@@ -12,6 +13,10 @@ import compression from 'compression';
 import json from './middlewares/json';
 import logger, { logStream } from './utils/logger';
 import * as errorHandler from './middlewares/errorHandler';
+
+// Initialize Raven
+// https://docs.sentry.io/clients/node/integrations/express/
+Raven.config(process.env.SENTRY_DSN).install();
 
 const app = express();
 
@@ -24,6 +29,9 @@ app.set('host', APP_HOST);
 
 app.locals.title = process.env.APP_NAME;
 app.locals.version = process.env.APP_VERSION;
+
+// This request handler must be the first middleware on the app
+app.use(Raven.requestHandler());
 
 app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
 app.use(cors());
@@ -39,6 +47,9 @@ app.use(express.static(path.join(__dirname, '/../public')));
 
 // API Routes
 app.use('/api', routes);
+
+// This error handler must be before any other error middleware
+app.use(Raven.errorHandler());
 
 // Error Middlewares
 app.use(errorHandler.genericErrorHandler);
