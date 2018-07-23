@@ -63,8 +63,8 @@ describe('Users Controller Test', () => {
         expect(data).to.be.an('object');
         expect(data).to.have.property('id');
         expect(data).to.have.property('name');
-        expect(data).to.have.property('createdAt');
-        expect(data).to.have.property('updatedAt');
+        expect(data).to.have.property('created_at');
+        expect(data).to.have.property('updated_at');
         expect(data.name).to.be.equal(user.name);
 
         done();
@@ -81,8 +81,8 @@ describe('Users Controller Test', () => {
         expect(data).to.be.an('object');
         expect(data).to.have.property('id');
         expect(data).to.have.property('name');
-        expect(data).to.have.property('createdAt');
-        expect(data).to.have.property('updatedAt');
+        expect(data).to.have.property('created_at');
+        expect(data).to.have.property('updated_at');
 
         done();
       });
@@ -117,8 +117,7 @@ describe('Users Controller Test', () => {
         expect(data).to.be.an('object');
         expect(data).to.have.property('id');
         expect(data).to.have.property('name');
-        expect(data).to.have.property('createdAt');
-        expect(data).to.have.property('updatedAt');
+        expect(data).to.have.property('updated_at');
         expect(data.name).to.be.equal(user.name);
 
         done();
