@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
 [![Codecov](https://codecov.io/gh/mesaugat/express-api-es6-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/mesaugat/express-api-es6-starter)
 
-Starter application for building APIs with [Express.js](http://expressjs.com/) - **[Demo](https://express-api-es6-starter.herokuapp.com/api-docs/)**
+Starter application for building APIs with [Express.js](http://expressjs.com/) - **[DEMO](https://express-api-es6-starter.herokuapp.com/api-docs/)**
 
 Comes with:
 
@@ -13,7 +13,7 @@ Comes with:
 * ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 * [Bookshelf](http://bookshelfjs.org/) ORM and [Knex](http://knexjs.org/) migrations
 * PostgreSQL (default) with support for MySQL and SQLite
-* API documentation using [swagger-ui](https://www.npmjs.com/package/swagger-ui) and [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
+* API documentation using [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui) and [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
 * [ESLint](http://eslint.org/) for code linting
 * Request validation using [Joi](https://www.npmjs.com/package/joi)
 * Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
@@ -26,7 +26,7 @@ Comes with:
 
 ## Prerequisites
 
-* [Node.js](https://yarnpkg.com/en/docs/install) - 8.9.0 [Carbon](https://nodejs.org/en/blog/release/v8.9.0/) and above
+* [Node.js](https://yarnpkg.com/en/docs/install) - 8.9.0 or above
 * [Yarn](https://yarnpkg.com/en/docs/install) - 1.7.0 or above
 * [NPM](https://docs.npmjs.com/getting-started/installing-node) - 5.5.1 or above
 
