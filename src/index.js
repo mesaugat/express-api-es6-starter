@@ -1,5 +1,6 @@
 import './env';
 import './db';
+import fs from 'fs';
 import cors from 'cors';
 import path from 'path';
 import Raven from 'raven';
@@ -24,6 +25,8 @@ const APP_PORT =
   (process.env.NODE_ENV === 'test' ? process.env.TEST_APP_PORT : process.env.APP_PORT) || process.env.PORT || '3000';
 const APP_HOST = process.env.APP_HOST || '0.0.0.0';
 
+const pathToSwaggerUi = require('swagger-ui-dist').absolutePath();
+
 app.set('port', APP_PORT);
 app.set('host', APP_HOST);
 
@@ -42,11 +45,19 @@ app.use(bodyParser.json());
 app.use(errorHandler.bodyParser);
 app.use(json);
 
-// Everything in the public folder is served as static content
-app.use(express.static(path.join(__dirname, '/../public')));
-
 // API Routes
 app.use('/api', routes);
+
+// Swagger UI
+// Hack around changing URL for swagger.json
+// https://github.com/swagger-api/swagger-ui/issues/4624
+const swaggerIndexContent = fs
+  .readFileSync(`${pathToSwaggerUi}/index.html`)
+  .toString()
+  .replace('https://petstore.swagger.io/v2/swagger.json', '/api/swagger.json');
+app.get('/api-docs', (req, res) => res.send(swaggerIndexContent));
+app.get('/api-docs/index.html', (req, res) => res.send(swaggerIndexContent));
+app.use('/api-docs', express.static(pathToSwaggerUi));
 
 // This error handler must be before any other error middleware
 app.use(Raven.errorHandler());
