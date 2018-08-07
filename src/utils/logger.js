@@ -17,7 +17,7 @@ if (!fs.existsSync(LOG_DIR)) {
 const logger = winston.createLogger({
   transports: [
     new winston.transports.Console({
-      format: format.combine(format.timestamp(), format.colorize(), format.simple()),
+      format: format.combine(format.colorize(), format.simple()),
       level: 'info'
     }),
     new winston.transports.DailyRotateFile({
