@@ -26,9 +26,9 @@ Comes with:
 
 ## Prerequisites
 
-* [Node.js](https://yarnpkg.com/en/docs/install) - 6.9.0 or above
-* [Yarn](https://yarnpkg.com/en/docs/install) - 1.0.0 or above
-* [NPM](https://docs.npmjs.com/getting-started/installing-node) - 3.10.8 or above
+* [Node.js](https://yarnpkg.com/en/docs/install) - 8.9.0 [Carbon](https://nodejs.org/en/blog/release/v8.9.0/) and above
+* [Yarn](https://yarnpkg.com/en/docs/install) - 1.7.0 or above
+* [NPM](https://docs.npmjs.com/getting-started/installing-node) - 5.5.1 or above
 
 ## Setup
 
