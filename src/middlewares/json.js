@@ -13,7 +13,7 @@ export default function json(request, response, next) {
   const disallowedHttpHeaders = ['PUT', 'POST', 'PATCH'];
 
   if (request.is('application/json') && disallowedHttpHeaders.includes(method) && _isEmpty(body)) {
-    throw new Boom.badRequest('Empty JSON');
+    throw Boom.badRequest('Empty JSON');
   }
 
   next();
