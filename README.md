@@ -1,11 +1,13 @@
-<p align="center">
+<h1 align="center">
   <img alt="Express API ES6 Starter" src="https://i.imgur.com/qeAbxtQ.png">
-</p>
+</h1>
+
+> Starter application for building APIs with Express.js
 
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
 [![Codecov](https://codecov.io/gh/mesaugat/express-api-es6-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/mesaugat/express-api-es6-starter)
 
-Starter application for building APIs with [Express.js](http://expressjs.com/) - **[DEMO](https://express-api-es6-starter.herokuapp.com/api-docs/)**
+### [DEMO](https://express-api-es6-starter.herokuapp.com/api-docs/)
 
 Comes with:
 
