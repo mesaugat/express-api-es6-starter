@@ -5,7 +5,7 @@ import usersController from './controllers/users';
 /**
  * Contains all API routes for the application.
  */
-let router = Router();
+const router = Router();
 
 /**
  * GET /api/swagger.json
@@ -15,35 +15,7 @@ router.get('/swagger.json', (req, res) => {
 });
 
 /**
- * @swagger
- * definitions:
- *   App:
- *     title: App
- *     type: object
- *     properties:
- *       app:
- *         type: string
- *       apiVersion:
- *         type: string
- */
-
-/**
- * @swagger
- * /:
- *   get:
- *     summary: Get API version
- *     description: App version
- *     produces:
- *       - application/json
- *     tags:
- *       - Base
- *     responses:
- *       200:
- *         description: Application and API version
- *         schema:
- *           title: Users
- *           type: object
- *           $ref: '#/definitions/App'
+ * GET /api
  */
 router.get('/', (req, res) => {
   res.json({
