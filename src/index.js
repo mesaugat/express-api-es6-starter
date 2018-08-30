@@ -55,8 +55,9 @@ const swaggerIndexContent = fs
   .readFileSync(`${pathToSwaggerUi}/index.html`)
   .toString()
   .replace('https://petstore.swagger.io/v2/swagger.json', '/api/swagger.json');
-app.get('/api-docs', (req, res) => res.send(swaggerIndexContent));
+
 app.get('/api-docs/index.html', (req, res) => res.send(swaggerIndexContent));
+app.get('/api-docs', (req, res) => res.redirect('/api-docs/index.html'));
 app.use('/api-docs', express.static(pathToSwaggerUi));
 
 // This error handler must be before any other error middleware
