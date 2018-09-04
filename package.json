@@ -51,11 +51,11 @@
     "lodash": "^4.17.10",
     "morgan": "^1.9.0",
     "pg": "^7.4.3",
-    "raven": "^2.6.3",
+    "raven": "^2.6.4",
     "serve-favicon": "^2.5.0",
-    "swagger-jsdoc": "^3.0.2",
+    "swagger-jsdoc": "^3.0.3",
     "swagger-ui-dist": "^3.18.2",
-    "winston": "^3.0.0",
+    "winston": "^3.1.0",
     "winston-daily-rotate-file": "^3.3.2"
   },
   "devDependencies": {
@@ -67,7 +67,7 @@
     "chai": "^4.0.0",
     "codecov": "^3.0.4",
     "cross-env": "^5.2.0",
-    "eslint": "^5.4.0",
+    "eslint": "^5.5.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "husky": "^0.14.3",
