@@ -11,27 +11,27 @@
 
 Comes with:
 
-* [ES6](http://babeljs.io/learn-es2015/) features/modules
-* ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
-* [Bookshelf](http://bookshelfjs.org/) ORM and [Knex](http://knexjs.org/) migrations
-* PostgreSQL (default) with support for MySQL and SQLite
-* API documentation using [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui) and [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
-* [ESLint](http://eslint.org/) for code linting
-* Request validation using [Joi](https://www.npmjs.com/package/joi)
-* Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
-* Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
-* Logging using [winston](https://www.npmjs.com/package/winston)
-* Error reporting using [raven](http://npmjs.com/package/raven)
-* Tests using [mocha](https://www.npmjs.com/package/mocha), [supertest](https://www.npmjs.com/package/supertest) and [chai](https://www.npmjs.com/package/chai)
+- [ES6](http://babeljs.io/learn-es2015/) features/modules
+- ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [Bookshelf](http://bookshelfjs.org/) ORM and [Knex](http://knexjs.org/) migrations
+- PostgreSQL (default) with support for MySQL and SQLite
+- API documentation using [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui) and [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
+- [ESLint](http://eslint.org/) for code linting
+- Request validation using [Joi](https://www.npmjs.com/package/joi)
+- Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
+- Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
+- Logging using [winston](https://www.npmjs.com/package/winston)
+- Error reporting using [raven](http://npmjs.com/package/raven)
+- Tests using [mocha](https://www.npmjs.com/package/mocha), [supertest](https://www.npmjs.com/package/supertest) and [chai](https://www.npmjs.com/package/chai)
 
 ---
 
 ## Prerequisites
 
-* [Node.js](https://yarnpkg.com/en/docs/install) - 8.9.0 or above
-* [Yarn](https://yarnpkg.com/en/docs/install) - 1.7.0 or above
-* [NPM](https://docs.npmjs.com/getting-started/installing-node) - 5.5.1 or above
-* [PostgreSQL](https://www.postgresql.org/download/) - 10.0 or above
+- [Node.js](https://yarnpkg.com/en/docs/install) - 8.9.0 or above
+- [Yarn](https://yarnpkg.com/en/docs/install) - 1.7.0 or above
+- [NPM](https://docs.npmjs.com/getting-started/installing-node) - 5.5.1 or above
+- [PostgreSQL](https://www.postgresql.org/download/) - 10.0 or above
 
 ## Setup
 
@@ -71,6 +71,7 @@ Example,
 Use [docker-compose](https://docs.docker.com/compose/) to quickly bring up a stack with pre-configured Postgres database container. Data is ephemeral and containers will disappear when stack is removed.
 
 Specific configuration for Docker is in `.env.docker`
+
 - `0.0.0.0` as `$APP_HOST` to expose app on Docker network interface
 - Pre-configured Postgres settings - can be updated to point to another Postgres host
 
