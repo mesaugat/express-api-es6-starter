@@ -15,14 +15,25 @@
     "rollback": "knex migrate:rollback --knexfile src/knexfile.js",
     "make:seeder": "knex seed:make --knexfile src/knexfile.js",
     "make:migration": "knex migrate:make --knexfile src/knexfile.js",
-    "test": "cross-env NODE_ENV=test mocha --exit --recursive --require @babel/register test",
-    "prettify": "prettier --single-quote --print-width 120 --write \"src/**/*.js\" \"test/**/*.js\"",
+    "format:md": "prettier --parser markdown --write '*.md'",
+    "format:yml": "prettier --parser yaml --single-quote --write '*.{yml,yaml}'",
+    "format:code": "prettier --single-quote --print-width 120 --write 'src/**/*.js' 'test/**/*.js'",
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
+    "test": "cross-env NODE_ENV=test mocha --exit --recursive --require @babel/register test",
     "test:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive test"
   },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
+      "prettier --single-quote --print-width 120 --write 'src/**/*.js' 'test/**/*.js'",
+      "git add"
+    ],
+    "*.{yml,yml}": [
+      "prettier --single-quote --print-width 120 --write '*.{yml,yaml}'",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --parser markdown --write '*.md'",
       "git add"
     ]
   },
