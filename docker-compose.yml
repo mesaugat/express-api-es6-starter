@@ -5,7 +5,7 @@ services:
     volumes:
       - .env.docker:/app/.env
     ports:
-      - "8848:8848"
+      - '8848:8848'
     entrypoint: /bin/sh
     command: -c "sleep 5 && yarn migrate && yarn seed && yarn start:dev"
     depends_on:
