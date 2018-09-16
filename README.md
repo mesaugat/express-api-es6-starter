@@ -87,11 +87,22 @@ Bring down stack,
 
 ## Using MySQL instead of PostgreSQL
 
-Install the [mysql](https://www.npmjs.com/package/mysql) driver first. Update these lines `DB_CLIENT='pg'` and `DB_PORT='5432'` in your .env file to `DB_CLIENT='mysql'` and `DB_PORT='3306'` respectively.
+Install the [mysql](https://www.npmjs.com/package/mysql) driver first.
+
+    $ yarn add mysql
+
+Update these lines in your `.env` file.
+
+```diff
+- DB_CLIENT='pg'
++ DB_CLIENT='mysql'
+
+- DB_PORT='5432'
++ DB_PORT='3306'
+```
 
 You can remove the [pg](https://www.npmjs.com/package/pg) driver if you like to.
 
-    $ yarn add mysql
     $ yarn remove pg
 
 That's it, you are ready to roll.
@@ -99,6 +110,8 @@ That's it, you are ready to roll.
 ## Tests
 
 To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the name of the test database and run the migrations.
+
+    DB_TEST
 
     $ NODE_ENV=test yarn migrate
     $ yarn test
