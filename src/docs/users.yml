@@ -9,11 +9,11 @@ definitions:
       name:
         type: string
         description: Name of the user
-      createdAt:
+      created_at:
         type: string
         format: date-time
         description: User creation datetime
-      updatedAt:
+      updated_at:
         type: string
         format: date-time
         description: User update datetime
@@ -165,7 +165,7 @@ definitions:
             name:
               type: string
               description: Name of the user
-            updatedAt:
+            updated_at:
               type: string
               format: date-time
               description: Updated user datetime
