@@ -4,7 +4,6 @@
   "description": "Express API ES6 Starter",
   "scripts": {
     "start": "node dist",
-    "precommit": "lint-staged",
     "prestart": "npm run build",
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
@@ -21,6 +20,11 @@
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
     "test": "cross-env NODE_ENV=test mocha --exit --recursive --require @babel/register test",
     "test:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
