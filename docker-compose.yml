@@ -10,11 +10,19 @@ services:
     command: -c "sleep 5 && yarn migrate && yarn seed && yarn start:dev"
     depends_on:
       - pg
+      - pg_test
     links:
       - pg
+      - pg_test
   pg:
-    image: postgres:10-alpine
+    image: postgres:11-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mysecretpassword
       - POSTGRES_DB=express
+  pg_test:
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=express_test
