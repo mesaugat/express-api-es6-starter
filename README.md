@@ -31,7 +31,7 @@ Comes with:
 - [Node.js](https://yarnpkg.com/en/docs/install) - 8.9.0 or above
 - [Yarn](https://yarnpkg.com/en/docs/install) - 1.7.0 or above
 - [NPM](https://docs.npmjs.com/getting-started/installing-node) - 5.5.1 or above
-- [PostgreSQL](https://www.postgresql.org/download/) - 10.0 or above
+- [PostgreSQL](https://www.postgresql.org/download/) - 11.0 or above
 
 ## Setup
 
@@ -109,9 +109,7 @@ That's it, you are ready to roll.
 
 ## Tests
 
-To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the name of the test database and run the migrations.
-
-    DB_TEST
+To run the tests you need to create a separate test database. Don't forget to update your `.env` file to include the connections for test database.
 
     $ NODE_ENV=test yarn migrate
     $ yarn test
