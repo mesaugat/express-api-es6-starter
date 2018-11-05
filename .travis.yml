@@ -7,8 +7,14 @@ node_js:
 services:
   - postgresql
 
-env:
-  - APP_NAME='Express API ES6 Starter' APP_VERSION='1.0.0' TEST_APP_PORT='9945' TEST_DB_NAME='express_test' TEST_DB_PASSWORD='' TEST_DB_PORT='5432' TEST_DB_USER='postgres'
+env: >
+  APP_NAME='Express API ES6 Starter'
+  APP_VERSION='1.0.0'
+  TEST_APP_PORT='9945'
+  TEST_DB_NAME='express_test'
+  TEST_DB_PASSWORD=''
+  TEST_DB_PORT='5432'
+  TEST_DB_USER='postgres'
 
 before_script:
   - cp .env.example .env
