@@ -1,14 +1,34 @@
 language: node_js
+
 node_js:
   - node
   - lts/*
+  - 8
+
 services:
   - postgresql
+
+branches:
+  only:
+    - master
+
+env: >
+  NODE_ENV=test
+  APP_NAME='Express API ES6 Starter'
+  APP_VERSION='1.0.0'
+  TEST_APP_PORT='9945'
+  TEST_DB_NAME='express_test'
+  TEST_DB_PASSWORD=''
+  TEST_DB_PORT='5432'
+  TEST_DB_USER='postgres'
+
 before_script:
   - cp .env.example .env
   - psql -c 'create database express_test;' -U postgres
-  - NODE_ENV=test npm run migrate
+  - npm run migrate
+
 script:
   - npm run test:coverage
+
 after_script:
   - npm run codecov
