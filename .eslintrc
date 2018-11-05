@@ -4,15 +4,11 @@
     "node": true,
     "mocha": true
   },
-  "extends": [
-    "prettier",
-    "eslint-config-leapfrog"
-  ],
+  "extends": ["eslint-config-leapfrog", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["prettier"],
   "rules": {
     "curly": "error",
     "camelcase": [
@@ -25,14 +21,6 @@
       "error",
       {
         "argsIgnorePattern": "next"
-      }
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 120,
-        "singleQuote": true,
-        "bracketSpacing": true
       }
     ],
     "require-jsdoc": [
