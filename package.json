@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node dist",
     "prestart": "npm run build",
-    "lint": "eslint src test; exit 0",
-    "lint:fix": "eslint src test --fix; exit 0",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "seed": "knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
