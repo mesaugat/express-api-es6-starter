@@ -1,27 +1,22 @@
 /**
- * Seed users table.
+ * Delete all existing entries and seed users table.
  *
- * @param  {object} knex
- * @param  {object} Promise
+ * @param  {Object} knex
  * @return {Promise}
  */
-export function seed(knex, Promise) {
-  // Deletes all existing entries
+export function seed(knex) {
   return knex('users')
     .del()
     .then(() => {
-      return Promise.all([
-        // Inserts seed entries
-        knex('users').insert([
-          {
-            name: 'Saugat Acharya',
-            updated_at: new Date()
-          },
-          {
-            name: 'John Doe',
-            updated_at: new Date()
-          }
-        ])
+      return knex('users').insert([
+        {
+          name: 'Saugat Acharya',
+          updated_at: new Date()
+        },
+        {
+          name: 'John Doe',
+          updated_at: new Date()
+        }
       ]);
     });
 }
