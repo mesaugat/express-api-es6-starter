@@ -48,7 +48,7 @@ export function create(req, res, next) {
  *
  * @param {Object} req
  * @param {Object} res
- * @param {next} next
+ * @param {Function} next
  */
 export function update(req, res, next) {
   userService
@@ -62,7 +62,7 @@ export function update(req, res, next) {
  *
  * @param {Object} req
  * @param {Object} res
- * @param {next} next
+ * @param {Function} next
  */
 export function deleteUser(req, res, next) {
   userService
