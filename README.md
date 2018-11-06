@@ -31,7 +31,7 @@ Comes with:
 - [Node.js](https://yarnpkg.com/en/docs/install)
 - [Yarn](https://yarnpkg.com/en/docs/install)
 - [NPM](https://docs.npmjs.com/getting-started/installing-node)
-- [PostgreSQL](https://www.postgresql.org/download/)
+- [PostgreSQL](https://www.postgresql.org/download/) / [MySQL](https://www.mysql.com/downloads/) / [SQLite](https://www.sqlite.org/download.html)
 
 ## Setup
 
