@@ -49,7 +49,7 @@ app.use(json);
 app.use('/api', routes);
 
 // Swagger UI
-// Hack around changing URL for swagger.json
+// Workaround for changing the default URL in swagger.json
 // https://github.com/swagger-api/swagger-ui/issues/4624
 const swaggerIndexContent = fs
   .readFileSync(`${pathToSwaggerUi}/index.html`)
