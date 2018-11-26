@@ -3252,10 +3252,10 @@ jest-validate@^23.5.0:
     leven "^2.1.0"
     pretty-format "^23.6.0"
 
-joi@^14.1.1:
-  version "14.1.1"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-14.1.1.tgz#7b548b146b7809b9e3495a18ede234748642262e"
-  integrity sha512-v/aWz/iam4olepSLgdA8St8eA7W3AQPvwAJd8Qi7I8UDuoR9rLXF8CJfrakORgOPf7vDEQihPUS6kXN3Rl1ycA==
+joi@^14.3.0:
+  version "14.3.0"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-14.3.0.tgz#55f7c5caa8256de74ccb12eb22ab1c19eea02db3"
+  integrity sha512-0HKd1z8MWogez4GaU0LkY1FgW30vR2Kwy414GISfCU41OYgUC2GWpNe5amsvBZtDqPtt7DohykfOOMIw1Z5hvQ==
   dependencies:
     hoek "6.x.x"
     isemail "3.x.x"
@@ -5395,10 +5395,10 @@ supports-color@^5.2.0, supports-color@^5.3.0, supports-color@^5.4.0:
   dependencies:
     has-flag "^3.0.0"
 
-swagger-jsdoc@^3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/swagger-jsdoc/-/swagger-jsdoc-3.2.4.tgz#114fa564194f309a309ab74e2765bb5acaa6c3ad"
-  integrity sha512-FQ83Be+Vyr8FZYDO+qOGSVFcuTF/3RG/v48htbvT6OCLUW949W17plG5eIGRhb62dsZIqQcrjS9v1wyGDSRW0A==
+swagger-jsdoc@^3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/swagger-jsdoc/-/swagger-jsdoc-3.2.5.tgz#dfb930888f8f3a1f9fc6f1ecaf13625ba13a9900"
+  integrity sha512-1F0GuaU6V8FUaM2qOp3BU7d3Zf6dT3nyRvpTHf/DdzRJ7JpI8EvQxGGnLas8389iyx8tj1m/LtDjdMMFTmMtWg==
   dependencies:
     commander "2.17.1"
     doctrine "2.1.0"
@@ -5963,9 +5963,9 @@ yargs@11.1.0:
     yargs-parser "^9.0.2"
 
 z-schema@^3.23.0:
-  version "3.24.1"
-  resolved "https://registry.yarnpkg.com/z-schema/-/z-schema-3.24.1.tgz#07a3643c8e061ec1af32e823c9f9e5e5e56e3c8d"
-  integrity sha512-2eR8eq/v1coNqyBc5HzswEcoLbw+S33RMnR326uiuOIr97ve5vwPNMDrKS1IRCB12bZ3a8BrfGxrRwuSXUyPvw==
+  version "3.24.2"
+  resolved "https://registry.yarnpkg.com/z-schema/-/z-schema-3.24.2.tgz#193560e718812d98fdc190c38871b634b92f2386"
+  integrity sha512-Zb2YLJ9g72MexBXKPRzoypd4OZfVkFghdy10eVbcMNLl9YQsPXtyMpiK7a3sG7IIERg1lEDjEMrG9Km9DPbWLw==
   dependencies:
     core-js "^2.5.7"
     lodash.get "^4.0.0"
