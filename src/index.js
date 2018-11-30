@@ -7,10 +7,10 @@ import path from 'path';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
-import Sentry from '@sentry/node';
 import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+import * as Sentry from '@sentry/node';
 
 import routes from './routes';
 import json from './middlewares/json';
