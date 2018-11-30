@@ -37,7 +37,7 @@ Comes with:
 
 Clone the repository, install the dependencies and get started right away.
 
-    $ git clone git@github.com:mesaugat/express-api-es6-starter.git <application-name>
+    $ git clone --depth=1 git@github.com:mesaugat/express-api-es6-starter.git <application-name>
     $ cd <application-name>
     $ rm -rf .git
     $ yarn   # or npm install
