@@ -46,6 +46,7 @@
   "author": "Saugat Acharya <mesaugat@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@sentry/node": "^4.4.1",
     "body-parser": "^1.18.3",
     "bookshelf": "^0.13.3",
     "boom": "^7.2.2",
@@ -60,7 +61,6 @@
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "pg": "^7.6.1",
-    "raven": "^2.6.4",
     "serve-favicon": "^2.5.0",
     "swagger-jsdoc": "^3.2.5",
     "swagger-ui-dist": "^3.20.1",
