@@ -21,7 +21,7 @@ Comes with:
 - Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
 - Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
 - Logging using [winston](https://www.npmjs.com/package/winston)
-- Error reporting using [raven](http://npmjs.com/package/raven)
+- Error reporting using [Sentry](http://npmjs.com/package/@sentry/node)
 - Tests using [mocha](https://www.npmjs.com/package/mocha), [supertest](https://www.npmjs.com/package/supertest) and [chai](https://www.npmjs.com/package/chai)
 
 ---
