@@ -1,5 +1,6 @@
 import './env';
 import './db';
+
 import fs from 'fs';
 import cors from 'cors';
 import path from 'path';
@@ -7,10 +8,11 @@ import Raven from 'raven';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
-import routes from './routes';
 import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+
+import routes from './routes';
 import json from './middlewares/json';
 import logger, { logStream } from './utils/logger';
 import * as errorHandler from './middlewares/errorHandler';

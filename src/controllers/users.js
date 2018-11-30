@@ -1,4 +1,5 @@
 import HttpStatus from 'http-status-codes';
+
 import * as userService from '../services/userService';
 
 /**

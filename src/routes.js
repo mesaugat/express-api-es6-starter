@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import swaggerSpec from './utils/swagger';
 import userRoutes from './routes/userRoutes';
 

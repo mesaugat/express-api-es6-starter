@@ -1,6 +1,7 @@
 import knexJs from 'knex';
-import knexConfig from './knexfile';
 import bookshelfJs from 'bookshelf';
+
+import knexConfig from './knexfile';
 
 /**
  * Database connection.

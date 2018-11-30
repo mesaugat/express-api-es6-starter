@@ -1,4 +1,5 @@
 import Boom from 'boom';
+
 import User from '../models/user';
 
 /**
