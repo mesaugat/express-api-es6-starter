@@ -10,29 +10,10 @@
     "sourceType": "module"
   },
   "rules": {
-    "curly": "error",
     "camelcase": [
       "error",
       {
         "properties": "never"
-      }
-    ],
-    "no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "next"
-      }
-    ],
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": false,
-          "ClassDeclaration": false,
-          "ArrowFunctionExpression": false,
-          "FunctionExpression": false
-        }
       }
     ]
   }

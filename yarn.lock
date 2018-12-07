@@ -1434,6 +1434,13 @@ commander@^2.14.1, commander@^2.16.0, commander@^2.7.1, commander@^2.8.1, comman
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
 
+comment-parser@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-0.5.0.tgz#e833701804308eedef96c0b5029375b07f4eba1e"
+  integrity sha512-sNM+U6+Kme4WDxjVJ+1N92BQm5SC0RbFD4TLXLJ+hThX3crW1q+7ObjUhylMYAjR/rWdB+7ZNLPjujVbGruHGQ==
+  dependencies:
+    readable-stream "^2.0.4"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -1932,11 +1939,12 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-leapfrog@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-leapfrog/-/eslint-config-leapfrog-1.0.1.tgz#259f2da9910d5d2a763456f7735515d52e1b93e9"
-  integrity sha1-JZ8tqZENXSp2NFb3c1UV1S4bk+k=
+eslint-config-leapfrog@^2.0.0-beta.0:
+  version "2.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-leapfrog/-/eslint-config-leapfrog-2.0.0-beta.0.tgz#93f7a7a931171d64d891ef697be85097fd37a16f"
+  integrity sha512-UHBH3Qg5k9nUxgsxR+hQtYlAoxZJQFy+CEl0Hy4WTNIM+CsI10HIfK8zOrMLi9YR5CQuLikQG89HIe5OnGj5qg==
   dependencies:
+    eslint-plugin-jsdoc "^3.9.1"
     eslint-plugin-react "^7.7.0"
 
 eslint-config-prettier@^3.3.0:
@@ -1945,6 +1953,15 @@ eslint-config-prettier@^3.3.0:
   integrity sha512-Bc3bh5bAcKNvs3HOpSi6EfGA2IIp7EzWcg2tS4vP7stnXu/J1opihHDM7jI9JCIckyIDTgZLSWn7J3HY0j2JfA==
   dependencies:
     get-stdin "^6.0.0"
+
+eslint-plugin-jsdoc@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-3.9.1.tgz#ca626c7899b6b883e6b4bec441d3510f756d98d1"
+  integrity sha512-kSQ62uraDa9QSv/5YncMZoKLScqrq7kt4lGGokH7Iyuqqzo2rZhERdrkPELLdnX4jWwkh+gYFZBt0PVIseKH1g==
+  dependencies:
+    comment-parser "^0.5.0"
+    jsdoctypeparser "^2.0.0-alpha-8"
+    lodash "^4.17.11"
 
 eslint-plugin-react@^7.7.0:
   version "7.11.1"
@@ -3372,6 +3389,11 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
+jsdoctypeparser@^2.0.0-alpha-8:
+  version "2.0.0-alpha-8"
+  resolved "https://registry.yarnpkg.com/jsdoctypeparser/-/jsdoctypeparser-2.0.0-alpha-8.tgz#baf137fb8e2a558810adcf19d2d2a2f680e90a5f"
+  integrity sha1-uvE3+44qVYgQrc8Z0tKi9oDpCl8=
+
 jsesc@^2.5.1:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
@@ -4777,7 +4799,7 @@ read-pkg@^4.0.1:
     parse-json "^4.0.0"
     pify "^3.0.0"
 
-readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.3.5, readable-stream@^2.3.6:
+readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.3.5, readable-stream@^2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   integrity sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
