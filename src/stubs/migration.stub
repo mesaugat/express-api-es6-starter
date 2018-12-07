@@ -1,6 +1,8 @@
 /**
- * @param  {object} knex
- * @return {Promise}
+ * Create table `table_name`.
+ *
+ * @param   {object} knex
+ * @returns {Promise}
  */
 export function up(knex) {
   return knex.schema.createTable('table_name', table => {
@@ -9,13 +11,18 @@ export function up(knex) {
       .timestamp('created_at')
       .notNull()
       .defaultTo(knex.raw('now()'));
-    table.timestamp('updated_at').notNull();
+    table
+      .timestamp('updated_at')
+      .notNull()
+      .defaultTo(knex.raw('now()'));
   });
 }
 
 /**
- * @param  {object} knex
- * @return {Promise}
+ * Drop `table_name`.
+ *
+ * @param   {object} knex
+ * @returns {Promise}
  */
 export function down(knex) {
   return knex.schema.dropTable('table_name');

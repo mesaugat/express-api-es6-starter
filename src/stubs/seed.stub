@@ -1,25 +1,22 @@
 /**
- * @param  {object} knex
- * @param  {object} Promise
- * @return {Promise}
+ * Delete existing entries and seed values for `table_name`.
+ *
+ * @param   {object} knex
+ * @returns {Promise}
  */
-export function seed(knex, Promise) {
-  // Deletes all existing entries
+export function seed(knex) {
   return knex('table_name')
     .del()
     .then(() => {
-      // Inserts seed entries
-      return Promise.all([
-        knex('table_name').insert([
-          {
-            colName: 'rowValue',
-            colName2: 'rowValue'
-          },
-          {
-            colName: 'rowValue',
-            colName2: 'rowValue'
-          }
-        ])
+      return knex('table_name').insert([
+        {
+          colName: 'rowValue',
+          colName2: 'rowValue'
+        },
+        {
+          colName: 'rowValue',
+          colName2: 'rowValue'
+        }
       ]);
     });
 }
