@@ -3,9 +3,9 @@ import Joi from 'joi';
 /**
  * Utility helper for Joi validation.
  *
- * @param  {object}  data
- * @param  {object}  schema
- * @return {Promise}
+ * @param   {object}  data
+ * @param   {object}  schema
+ * @returns {Promise}
  */
 function validate(data, schema) {
   return Joi.validate(data, schema, { abortEarly: false }, err => {

@@ -27,7 +27,7 @@ describe('Users Controller Test', () => {
   });
 
   it('should not create a new user if name is not provided', done => {
-    let user = {
+    const user = {
       noname: 'Jane Doe'
     };
 
@@ -35,7 +35,7 @@ describe('Users Controller Test', () => {
       .post('/api/users')
       .send(user)
       .end((err, res) => {
-        let { code, message, details } = res.body.error;
+        const { code, message, details } = res.body.error;
 
         expect(res.statusCode).to.be.equal(400);
         expect(code).to.be.equal(400);
@@ -49,7 +49,7 @@ describe('Users Controller Test', () => {
   });
 
   it('should create a new user with valid data', done => {
-    let user = {
+    const user = {
       name: 'Jane Doe'
     };
 
@@ -57,7 +57,7 @@ describe('Users Controller Test', () => {
       .post('/api/users')
       .send(user)
       .end((err, res) => {
-        let { data } = res.body;
+        const { data } = res.body;
 
         expect(res.statusCode).to.be.equal(201);
         expect(data).to.be.an('object');
@@ -75,7 +75,7 @@ describe('Users Controller Test', () => {
     request(app)
       .get('/api/users/1')
       .end((err, res) => {
-        let { data } = res.body;
+        const { data } = res.body;
 
         expect(res.statusCode).to.be.equal(200);
         expect(data).to.be.an('object');
@@ -92,7 +92,7 @@ describe('Users Controller Test', () => {
     request(app)
       .get('/api/users/1991')
       .end((err, res) => {
-        let { code, message } = res.body.error;
+        const { code, message } = res.body.error;
 
         expect(res.statusCode).to.be.equal(404);
         expect(code).to.be.equal(404);
@@ -103,7 +103,7 @@ describe('Users Controller Test', () => {
   });
 
   it('should update a user if name is provided', done => {
-    let user = {
+    const user = {
       name: 'John Doe'
     };
 
@@ -111,7 +111,7 @@ describe('Users Controller Test', () => {
       .put('/api/users/1')
       .send(user)
       .end((err, res) => {
-        let { data } = res.body;
+        const { data } = res.body;
 
         expect(res.statusCode).to.be.equal(200);
         expect(data).to.be.an('object');
@@ -125,7 +125,7 @@ describe('Users Controller Test', () => {
   });
 
   it('should not update a user if name is not provided', done => {
-    let user = {
+    const user = {
       noname: 'John Doe'
     };
 
@@ -133,7 +133,7 @@ describe('Users Controller Test', () => {
       .put('/api/users/1')
       .send(user)
       .end((err, res) => {
-        let { code, message, details } = res.body.error;
+        const { code, message, details } = res.body.error;
 
         expect(res.statusCode).to.be.equal(400);
         expect(code).to.be.equal(400);
@@ -160,7 +160,7 @@ describe('Users Controller Test', () => {
     request(app)
       .delete('/api/users/1991')
       .end((err, res) => {
-        let { code, message } = res.body.error;
+        const { code, message } = res.body.error;
 
         expect(res.statusCode).to.be.equal(404);
         expect(code).to.be.equal(404);
@@ -171,13 +171,13 @@ describe('Users Controller Test', () => {
   });
 
   it('should respond with bad request for empty JSON in request body', done => {
-    let user = {};
+    const user = {};
 
     request(app)
       .post('/api/users')
       .send(user)
       .end((err, res) => {
-        let { code, message } = res.body.error;
+        const { code, message } = res.body.error;
 
         expect(res.statusCode).to.be.equal(400);
         expect(code).to.be.equal(400);

@@ -1,8 +1,8 @@
 /**
  * Delete all existing entries and seed users table.
  *
- * @param  {Object} knex
- * @return {Promise}
+ * @param   {Object} knex
+ * @returns {Promise}
  */
 export function seed(knex) {
   return knex('users')

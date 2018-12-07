@@ -36,9 +36,7 @@ export function methodNotAllowed(req, res) {
 
 /**
  * To handle errors from body parser for cases such as invalid JSON sent through
- * the body.
- *
- * https://github.com/expressjs/body-parser#errors
+ * the body (https://github.com/expressjs/body-parser#errors).
  *
  * @param  {Object}   err
  * @param  {Object}   req
@@ -66,7 +64,7 @@ export function bodyParser(err, req, res, next) {
  */
 export function genericErrorHandler(err, req, res, next) {
   logger.error(err.stack);
+  const error = buildError(err);
 
-  let error = buildError(err);
   res.status(error.code).json({ error });
 }

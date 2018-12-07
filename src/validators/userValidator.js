@@ -13,10 +13,10 @@ const SCHEMA = {
 /**
  * Validate create/update user request.
  *
- * @param  {Object}   req
- * @param  {Object}   res
- * @param  {Function} next
- * @return {Promise}
+ * @param   {Object}   req
+ * @param   {Object}   res
+ * @param   {Function} next
+ * @returns {Promise}
  */
 function userValidator(req, res, next) {
   return validate(req.body, SCHEMA)
@@ -27,10 +27,10 @@ function userValidator(req, res, next) {
 /**
  * Validate users existence.
  *
- * @param  {Object}   req
- * @param  {Object}   res
- * @param  {Function} next
- * @return {Promise}
+ * @param   {Object}   req
+ * @param   {Object}   res
+ * @param   {Function} next
+ * @returns {Promise}
  */
 function findUser(req, res, next) {
   return userService

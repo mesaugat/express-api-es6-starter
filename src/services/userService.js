@@ -5,7 +5,7 @@ import User from '../models/user';
 /**
  * Get all users.
  *
- * @return {Promise}
+ * @returns {Promise}
  */
 export function getAllUsers() {
   return User.fetchAll();
@@ -14,8 +14,8 @@ export function getAllUsers() {
 /**
  * Get a user.
  *
- * @param  {Number|String}  id
- * @return {Promise}
+ * @param   {Number|String}  id
+ * @returns {Promise}
  */
 export function getUser(id) {
   return new User({ id }).fetch().then(user => {
@@ -30,8 +30,8 @@ export function getUser(id) {
 /**
  * Create new user.
  *
- * @param  {Object}  user
- * @return {Promise}
+ * @param   {Object}  user
+ * @returns {Promise}
  */
 export function createUser(user) {
   return new User({ name: user.name }).save();
@@ -40,9 +40,9 @@ export function createUser(user) {
 /**
  * Update a user.
  *
- * @param  {Number|String}  id
- * @param  {Object}         user
- * @return {Promise}
+ * @param   {Number|String}  id
+ * @param   {Object}         user
+ * @returns {Promise}
  */
 export function updateUser(id, user) {
   return new User({ id }).save({ name: user.name });
@@ -51,8 +51,8 @@ export function updateUser(id, user) {
 /**
  * Delete a user.
  *
- * @param  {Number|String}  id
- * @return {Promise}
+ * @param   {Number|String}  id
+ * @returns {Promise}
  */
 export function deleteUser(id) {
   return new User({ id }).fetch().then(user => user.destroy());
