@@ -1,7 +1,9 @@
 version: '3.4'
 services:
   express-api-es6-starter:
-    build: .
+    build:
+      context: .
+      target: dev
     volumes:
       - .env.docker:/app/.env
     ports:
