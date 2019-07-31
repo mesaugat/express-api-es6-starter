@@ -1,4 +1,4 @@
-FROM node:carbon-alpine
+FROM node:carbon-alpine AS dev
 
 # Port to listen on
 EXPOSE 8848
@@ -7,6 +7,9 @@ EXPOSE 8848
 WORKDIR /app
 COPY . /app/
 
+RUN yarn
+
 # Default app commands
 ENTRYPOINT ["yarn"]
 CMD ["start:dev"]
+
