@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import Joi from '@hapi/joi';
 
 import validate from '../utils/validate';
 import * as userService from '../services/userService';
