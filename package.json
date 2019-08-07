@@ -8,7 +8,7 @@
     "lint": "eslint src test",
     "lint:fix": "eslint src test --fix",
     "codecov": "cat coverage/*/lcov.info | codecov",
-    "seed": "knex seed:run --knexfile src/knexfile.js",
+    "seed": "yarn knex seed:run --knexfile src/knexfile.js",
     "build": "rimraf dist && babel src -D --out-dir dist",
     "knex": "babel-node node_modules/.bin/knex",
     "migrate": "yarn knex migrate:latest --knexfile src/knexfile.js",
