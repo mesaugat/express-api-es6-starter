@@ -11,8 +11,7 @@ COPY . /app/
 RUN yarn
 
 # Default app commands
-ENTRYPOINT ["yarn"]
-CMD ["start:dev"]
+CMD ["yarn", "start:dev"]
 
 # STAGE: Builder
 FROM node:carbon-alpine AS builder
@@ -25,6 +24,18 @@ FROM node:carbon-alpine AS prod-dependencies
 WORKDIR /app
 COPY ["package.json", "yarn.lock", "./"]
 RUN yarn install --prod
+
+# STAGE: Run migrations
+FROM dev AS migrate
+WORKDIR /app
+COPY --from=dev /app /app
+CMD yarn migrate && yarn seed
+
+# STAGE: Rollback migrations
+FROM dev AS migrate-rollback
+WORKDIR /app
+COPY --from=dev /app /app
+CMD yarn rollback
 
 # STAGE: Prod Deploy Ready Image
 FROM node:carbon-alpine AS prod

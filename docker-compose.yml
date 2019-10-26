@@ -8,8 +8,19 @@ services:
       - .env.docker:/app/.env
     ports:
       - '8848:8848'
-    entrypoint: /bin/sh
-    command: -c "sleep 5 && yarn migrate && yarn seed && yarn start:dev"
+    depends_on:
+      - pg
+      - pg_test
+    links:
+      - pg
+      - pg_test
+
+  migration:
+    build:
+      context: .
+      target: migrate
+    volumes:
+      - .env.docker:/app/.env
     depends_on:
       - pg
       - pg_test

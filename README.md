@@ -66,7 +66,9 @@ Example,
     $ yarn make:migration create_tags_table
     $ yarn make:seeder 02_insert_tags
 
-## Setup Using Docker
+## Using Docker
+
+### Using docker-compose
 
 Use [docker-compose](https://docs.docker.com/compose/) to quickly bring up a stack with pre-configured Postgres database container. Data is ephemeral and containers will disappear when stack is removed.
 
@@ -84,6 +86,38 @@ Navigate to http://localhost:8848/api-docs/ to verify application is running fro
 Bring down stack,
 
     $ docker-compose down
+
+### Multi-stage docker builds
+
+There are multiple build targets available for different stages. These images can be used to deploy or run jobs in different container based cloud infrastructure like Kubernetes, AWS ECS, Fargate, GCP Cloud Run etc.
+
+1. Building a production image.
+
+   ```bash
+   $ docker build --target=prod -t express-api-es6-starter:prod .
+   ```
+
+2. Building an image for development.
+
+   ```bash
+   $ docker build --target=dev -t express-api-es6-starter:dev .
+   ```
+
+3. Building an image that runs migration and/or rollback.
+
+   ```bash
+    # Docker image that runs migration and seeds.
+    $ docker build --target=migrate -t express-api-es6-starter:migrate .
+
+    # Docker image that rollbacks migrations.
+    $ docker build --target=migrate-rollback -t express-api-es6-starter:migrate-rollback .
+   ```
+
+Once the images have been built - all you need to do is run them providing a `.env` file. Like this:
+
+```bash
+$ docker run -v"/path/to/your/.env:/app/.env" mesaugat/express-api-es6-starter:migrate
+```
 
 ## Using MySQL instead of PostgreSQL
 
