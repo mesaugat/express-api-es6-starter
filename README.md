@@ -89,8 +89,7 @@ Bring down stack,
 
 ### Multi-stage docker builds
 
-There are multiple build targets available for different stages.
-These images could be used to deploy or run jobs in different container based cloud infrastructure like Kubernetes, AWS ECS, Fargate, GCP Cloud Run etc.
+There are multiple build targets available for different stages. These images can be used to deploy or run jobs in different container based cloud infrastructure like Kubernetes, AWS ECS, Fargate, GCP Cloud Run etc.
 
 1. Building a production image.
 
