@@ -68,7 +68,7 @@ Example,
 
 ## Using Docker
 
-#### Using docker-compose
+### Using docker-compose
 
 Use [docker-compose](https://docs.docker.com/compose/) to quickly bring up a stack with pre-configured Postgres database container. Data is ephemeral and containers will disappear when stack is removed.
 
@@ -87,7 +87,7 @@ Bring down stack,
 
     $ docker-compose down
 
-#### Multi-stage docker builds
+### Multi-stage docker builds
 
 There are multiple build targets available for different stages.
 These images could be used to deploy or run jobs in different container based cloud infrastructure like Kubernetes, AWS ECS, Fargate, GCP Cloud Run etc.
