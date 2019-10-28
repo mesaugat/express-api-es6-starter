@@ -18,13 +18,12 @@ export function getAllUsers() {
  * @returns {Promise}
  */
 export function getUser(id) {
-  return new User({ id }).fetch().then(user => {
-    if (!user) {
+  return new User({ id })
+    .fetch()
+    .then(user => user)
+    .catch(User.NotFoundError, () => {
       throw Boom.notFound('User not found');
-    }
-
-    return user;
-  });
+    });
 }
 
 /**
