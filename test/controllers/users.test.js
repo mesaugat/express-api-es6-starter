@@ -18,7 +18,7 @@ describe('Users Controller Test', () => {
     request(app)
       .get('/api/users')
       .end((err, res) => {
-        expect(res.statusCode).to.be.equal(200);
+        expect(res.status).to.be.equal(200);
         expect(res.body.data).to.be.an('array');
         expect(res.body.data).to.have.lengthOf(0);
 
@@ -37,7 +37,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { code, message, details } = res.body.error;
 
-        expect(res.statusCode).to.be.equal(400);
+        expect(res.status).to.be.equal(400);
         expect(code).to.be.equal(400);
         expect(message).to.be.equal('Bad Request');
         expect(details).to.be.an('array');
@@ -59,7 +59,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { data } = res.body;
 
-        expect(res.statusCode).to.be.equal(201);
+        expect(res.status).to.be.equal(201);
         expect(data).to.be.an('object');
         expect(data).to.have.property('id');
         expect(data).to.have.property('name');
@@ -77,7 +77,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { data } = res.body;
 
-        expect(res.statusCode).to.be.equal(200);
+        expect(res.status).to.be.equal(200);
         expect(data).to.be.an('object');
         expect(data).to.have.property('id');
         expect(data).to.have.property('name');
@@ -94,7 +94,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { code, message } = res.body.error;
 
-        expect(res.statusCode).to.be.equal(404);
+        expect(res.status).to.be.equal(404);
         expect(code).to.be.equal(404);
         expect(message).to.be.equal('User not found');
 
@@ -113,7 +113,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { data } = res.body;
 
-        expect(res.statusCode).to.be.equal(200);
+        expect(res.status).to.be.equal(200);
         expect(data).to.be.an('object');
         expect(data).to.have.property('id');
         expect(data).to.have.property('name');
@@ -135,7 +135,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { code, message, details } = res.body.error;
 
-        expect(res.statusCode).to.be.equal(400);
+        expect(res.status).to.be.equal(400);
         expect(code).to.be.equal(400);
         expect(message).to.be.equal('Bad Request');
         expect(details).to.be.an('array');
@@ -150,7 +150,7 @@ describe('Users Controller Test', () => {
     request(app)
       .delete('/api/users/1')
       .end((err, res) => {
-        expect(res.statusCode).to.be.equal(204);
+        expect(res.status).to.be.equal(204);
 
         done();
       });
@@ -162,7 +162,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { code, message } = res.body.error;
 
-        expect(res.statusCode).to.be.equal(404);
+        expect(res.status).to.be.equal(404);
         expect(code).to.be.equal(404);
         expect(message).to.be.equal('User not found');
 
@@ -179,7 +179,7 @@ describe('Users Controller Test', () => {
       .end((err, res) => {
         const { code, message } = res.body.error;
 
-        expect(res.statusCode).to.be.equal(400);
+        expect(res.status).to.be.equal(400);
         expect(code).to.be.equal(400);
         expect(message).to.be.equal('Empty JSON');
 
