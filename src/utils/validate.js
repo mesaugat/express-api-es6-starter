@@ -1,4 +1,4 @@
-import Joi from '@hapi/joi';
+import isEmpty from 'lodash/isEmpty';
 
 /**
  * Utility helper for Joi validation.
@@ -8,13 +8,13 @@ import Joi from '@hapi/joi';
  * @returns {Promise}
  */
 function validate(data, schema) {
-  return Joi.validate(data, schema, { abortEarly: false }, err => {
-    if (err) {
-      return Promise.reject(err);
-    }
+  const { error, value } = schema.validate(data, { abortEarly: false });
 
-    return Promise.resolve(null);
-  });
+  if (!isEmpty(error)) {
+    return Promise.reject(error);
+  }
+
+  return Promise.resolve(value);
 }
 
 export default validate;

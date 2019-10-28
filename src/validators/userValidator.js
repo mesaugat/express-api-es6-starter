@@ -3,12 +3,13 @@ import Joi from '@hapi/joi';
 import validate from '../utils/validate';
 import * as userService from '../services/userService';
 
-const SCHEMA = {
+// Validation schema
+const schema = Joi.object({
   name: Joi.string()
     .label('Name')
     .max(90)
     .required()
-};
+});
 
 /**
  * Validate create/update user request.
@@ -19,7 +20,7 @@ const SCHEMA = {
  * @returns {Promise}
  */
 function userValidator(req, res, next) {
-  return validate(req.body, SCHEMA)
+  return validate(req.body, schema)
     .then(() => next())
     .catch(err => next(err));
 }
