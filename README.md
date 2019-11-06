@@ -16,8 +16,9 @@ Comes with:
 - [Bookshelf](http://bookshelfjs.org/) ORM and [Knex](http://knexjs.org/) migrations
 - PostgreSQL (default) with support for MySQL and SQLite
 - API documentation using [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui) and [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
+- [Docker](https://docs.docker.com/engine/docker-overview/) support for Development and Production
 - [ESLint](http://eslint.org/) for code linting
-- Request validation using [Joi](https://www.npmjs.com/package/joi)
+- Request validation using [Joi](https://www.npmjs.com/package/@hapi/joi)
 - Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
 - Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
 - Logging using [winston](https://www.npmjs.com/package/winston)
