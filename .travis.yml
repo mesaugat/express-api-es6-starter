@@ -22,9 +22,11 @@ env: >
   TEST_DB_PORT='5432'
   TEST_DB_USER='postgres'
 
-before_script:
+before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$PATH"
+
+before_script:
   - cp .env.example .env
   - psql -c 'create database express_test;' -U postgres
   - yarn migrate
