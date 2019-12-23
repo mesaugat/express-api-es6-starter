@@ -117,7 +117,7 @@ There are multiple build targets available for different stages. These images ca
 Once the images have been built - all you need to do is run them providing a `.env` file. Like this:
 
 ```bash
-$ docker run -v"/path/to/your/.env:/app/.env" mesaugat/express-api-es6-starter:migrate
+$ docker run -v "/path/to/your/.env:/app/.env" mesaugat/express-api-es6-starter:migrate
 ```
 
 ## Using MySQL instead of PostgreSQL
