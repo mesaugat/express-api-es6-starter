@@ -24,6 +24,7 @@ Comes with:
 - Logging using [winston](https://www.npmjs.com/package/winston)
 - Error reporting using [Sentry](http://npmjs.com/package/@sentry/node)
 - Tests using [mocha](https://www.npmjs.com/package/mocha), [supertest](https://www.npmjs.com/package/supertest) and [chai](https://www.npmjs.com/package/chai)
+- VS Code built-in [Debugger](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) Support
 
 ---
 
