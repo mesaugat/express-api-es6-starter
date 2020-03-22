@@ -65,7 +65,7 @@ app.use('/api-docs', express.static(pathToSwaggerUi));
 // This error handler must be before any other error middleware
 app.use(Sentry.Handlers.errorHandler());
 
-// Error Middlewares
+// Error Middleware
 app.use(errorHandler.genericErrorHandler);
 app.use(errorHandler.methodNotAllowed);
 
@@ -80,7 +80,7 @@ process.on('unhandledRejection', err => {
   try {
     Sentry.captureException(err);
   } catch (err) {
-    logger.error('Raven error', err);
+    logger.error('Sentry error', err);
   } finally {
     process.exit(1);
   }
@@ -93,7 +93,7 @@ process.on('uncaughtException', err => {
   try {
     Sentry.captureException(err);
   } catch (err) {
-    logger.error('Raven error', err);
+    logger.error('Sentry error', err);
   } finally {
     process.exit(1);
   }
