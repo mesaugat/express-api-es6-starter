@@ -58,7 +58,7 @@
     "helmet": "^3.21.3",
     "http-status-codes": "^1.4.0",
     "knex": "^0.20.12",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "morgan": "^1.10.0",
     "pg": "^7.18.2",
     "serve-favicon": "^2.5.0",
