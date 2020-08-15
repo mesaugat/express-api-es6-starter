@@ -1401,13 +1401,6 @@ body-parser@1.19.0, body-parser@^1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
-bookshelf-virtuals-plugin@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/bookshelf-virtuals-plugin/-/bookshelf-virtuals-plugin-1.0.0.tgz#4a6bea9936b5615558c4ef3281f668738a90d207"
-  integrity sha512-6W7H6YiOKEf93fevX/hW7Cs8sX6c7/XzZyQBHo/yGQTb2LPAt40Xehz5ZCj4om/n4N84fzcztTP3PzEuT/ItaA==
-  dependencies:
-    lodash "^4.17.15"
-
 bookshelf@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/bookshelf/-/bookshelf-1.2.0.tgz#cb972aa2316405d3a4af9cb1e2814895ab23283e"

@@ -50,7 +50,6 @@
     "@sentry/node": "^5.21.1",
     "body-parser": "^1.19.0",
     "bookshelf": "^1.2.0",
-    "bookshelf-virtuals-plugin": "^1.0.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
