@@ -1,11 +1,11 @@
-import bookshelf from '../db';
+import db from '../db';
 
 const TABLE_NAME = 'users';
 
 /**
  * User model.
  */
-class User extends bookshelf.Model {
+class User extends db.Model {
   /**
    * Get table name.
    */
