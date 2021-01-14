@@ -28,13 +28,13 @@ services:
       - pg
       - pg_test
   pg:
-    image: postgres:11-alpine
+    image: postgres:13-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mysecretpassword
       - POSTGRES_DB=express
   pg_test:
-    image: postgres:11-alpine
+    image: postgres:13-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mysecretpassword
