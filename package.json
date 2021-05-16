@@ -57,7 +57,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
     "serve-favicon": "^2.5.0",
-    "swagger-jsdoc": "^7.0.0-rc.6",
+    "swagger-jsdoc": "^6.1.0",
     "swagger-ui-dist": "^3.48.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.5"
