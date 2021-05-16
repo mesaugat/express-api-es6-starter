@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node dist",
     "prestart": "yarn build",
+    "prepare": "husky install",
     "lint": "eslint src test",
     "lint:fix": "eslint src test --fix",
     "codecov": "cat coverage/*/lcov.info | codecov",
@@ -19,11 +20,6 @@
     "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
     "test": "cross-env NODE_ENV=test mocha --exit --recursive --require @babel/register test",
     "test:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.js": [
