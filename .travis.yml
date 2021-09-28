@@ -2,6 +2,7 @@ language: node_js
 
 node_js:
   - node
+  - lts/fermium
   - lts/erbium
 
 services:
@@ -10,6 +11,8 @@ services:
 branches:
   only:
     - master
+
+cache: yarn
 
 env: >
   NODE_ENV=test
