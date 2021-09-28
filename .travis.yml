@@ -12,6 +12,8 @@ branches:
   only:
     - master
 
+cache: yarn
+
 env: >
   NODE_ENV=test
   APP_NAME='Express API ES6 Starter'
