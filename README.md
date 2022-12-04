@@ -7,8 +7,6 @@
 [![Build Status](https://travis-ci.org/mesaugat/express-api-es6-starter.svg?branch=master)](https://travis-ci.org/mesaugat/express-api-es6-starter)
 [![Codecov](https://codecov.io/gh/mesaugat/express-api-es6-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/mesaugat/express-api-es6-starter)
 
-**Check out the working demo :point_right: [here](https://express-api-es6-starter.herokuapp.com/api-docs/).**
-
 Comes with:
 
 - [ES6](http://babeljs.io/learn-es2015/) features/modules
